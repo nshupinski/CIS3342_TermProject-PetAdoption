@@ -13,5 +13,15 @@ namespace _3342_TermProject_PetAdoption
         {
 
         }
+
+        protected void btnLogin_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCreateAccount_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
