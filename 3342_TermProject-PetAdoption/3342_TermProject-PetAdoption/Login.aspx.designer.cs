@@ -40,22 +40,13 @@ namespace _3342_TermProject_PetAdoption {
         protected global::System.Web.UI.WebControls.TextBox username_input;
         
         /// <summary>
-        /// rbtn_usertypeReviewer control.
+        /// password_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbtn_usertypeReviewer;
-        
-        /// <summary>
-        /// rbtn_usertypeRepresentative control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbtn_usertypeRepresentative;
+        protected global::System.Web.UI.WebControls.TextBox password_input;
         
         /// <summary>
         /// btnSubmit_login control.
