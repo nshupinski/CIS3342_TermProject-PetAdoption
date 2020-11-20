@@ -1,0 +1,38 @@
+﻿body {
+}
+
+.bg {
+    padding-left: 35%;
+    padding-right: 35%;
+    padding-top: 15em;
+    background-color: lightgrey;
+    height: auto;
+}
+
+.card-header {
+    background-color: hsl(171, 100%, 41%);
+}
+
+.card{
+    height: auto;
+}
+
+#lblErrors {
+    color: red;
+}
+
+fieldset {
+    padding: 10px;
+    margin-left: 40px;
+}
+
+p{
+    margin-left: -20px;
+    padding:10px;
+}
+
+.input{
+    margin-left: 20px;
+    padding:10px;
+}
+

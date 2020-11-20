@@ -110,3 +110,5 @@ C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\obj\Debug\3342_TermProject-PetAdoption.csproj.CopyComplete
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\obj\Debug\3342_TermProject-PetAdoption.dll
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\obj\Debug\3342_TermProject-PetAdoption.pdb
+C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\PetAdoptionLibrary.dll
+C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\PetAdoptionLibrary.pdb
