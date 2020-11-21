@@ -1,20 +1,19 @@
-﻿body {
-}
-
+﻿
 .bg {
     padding-left: 35%;
     padding-right: 35%;
     padding-top: 15em;
-    background-color: lightgrey;
+    padding-bottom: 15em;
     height: auto;
+    background-color: lightgrey;
 }
 
 .card-header {
     background-color: hsl(171, 100%, 41%);
 }
 
-.card{
-    height: auto;
+.card {
+    margin-top: -170px;
 }
 
 #lblErrors {
@@ -35,4 +34,18 @@ p{
     margin-left: 20px;
     padding:10px;
 }
+footer{
+    margin-top: 20px;
+}
 
+label{
+    margin-left:21px;
+}
+
+fieldset label{
+    margin-left: 0px;
+}
+
+#state_input{
+    height: 45px;
+}
