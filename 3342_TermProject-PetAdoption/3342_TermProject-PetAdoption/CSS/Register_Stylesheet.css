@@ -1,0 +1,51 @@
+﻿
+.bg {
+    padding-left: 35%;
+    padding-right: 35%;
+    padding-top: 15em;
+    padding-bottom: 15em;
+    height: auto;
+    background-color: lightgrey;
+}
+
+.card-header {
+    background-color: hsl(171, 100%, 41%);
+}
+
+.card {
+    margin-top: -170px;
+}
+
+#lblErrors {
+    color: red;
+}
+
+fieldset {
+    padding: 10px;
+    margin-left: 40px;
+}
+
+p{
+    margin-left: -20px;
+    padding:10px;
+}
+
+.input{
+    margin-left: 20px;
+    padding:10px;
+}
+footer{
+    margin-top: 20px;
+}
+
+label{
+    margin-left:21px;
+}
+
+fieldset label{
+    margin-left: 0px;
+}
+
+#state_input{
+    height: 45px;
+}

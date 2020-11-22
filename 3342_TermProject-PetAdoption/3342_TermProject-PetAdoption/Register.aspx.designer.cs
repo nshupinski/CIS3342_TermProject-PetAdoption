@@ -10,7 +10,7 @@
 namespace _3342_TermProject_PetAdoption {
     
     
-    public partial class Login {
+    public partial class WebForm1 {
         
         /// <summary>
         /// loginForm control.
@@ -31,6 +31,15 @@ namespace _3342_TermProject_PetAdoption {
         protected global::System.Web.UI.WebControls.Label lblErrors;
         
         /// <summary>
+        /// email_input control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox email_input;
+        
+        /// <summary>
         /// username_input control.
         /// </summary>
         /// <remarks>
@@ -49,13 +58,22 @@ namespace _3342_TermProject_PetAdoption {
         protected global::System.Web.UI.WebControls.TextBox password_input;
         
         /// <summary>
-        /// btnSubmit_login control.
+        /// phone_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit_login;
+        protected global::System.Web.UI.WebControls.TextBox phone_input;
+        
+        /// <summary>
+        /// city_input control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox city_input;
         
         /// <summary>
         /// btnSubmit_createAccount control.

@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\Login_Stylesheet.css" />
+    <Content Include="CSS\Register_Stylesheet.css" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.aspx.cs">
@@ -80,6 +82,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -92,6 +101,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PetAdoptionLibrary\PetAdoptionLibrary.csproj">
+      <Project>{d6b1e03a-cecd-4ef3-9bce-9e817cf7a279}</Project>
+      <Name>PetAdoptionLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
