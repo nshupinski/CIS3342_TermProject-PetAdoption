@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3342_TermProject-PetAdoptio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetAdoptionLibrary", "PetAdoptionLibrary\PetAdoptionLibrary.csproj", "{D6B1E03A-CECD-4EF3-9BCE-9E817CF7A279}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{AA211235-2646-419C-8CDD-DA7CCBA5ECCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D6B1E03A-CECD-4EF3-9BCE-9E817CF7A279}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6B1E03A-CECD-4EF3-9BCE-9E817CF7A279}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6B1E03A-CECD-4EF3-9BCE-9E817CF7A279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA211235-2646-419C-8CDD-DA7CCBA5ECCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA211235-2646-419C-8CDD-DA7CCBA5ECCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA211235-2646-419C-8CDD-DA7CCBA5ECCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA211235-2646-419C-8CDD-DA7CCBA5ECCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
