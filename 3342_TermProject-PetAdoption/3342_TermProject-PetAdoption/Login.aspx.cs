@@ -21,7 +21,7 @@ namespace _3342_TermProject_PetAdoption
 
         protected void btnCreateAccount_Clicked(object sender, EventArgs e)
         {
-
+            Server.Transfer("Register.aspx");
         }
     }
 }
