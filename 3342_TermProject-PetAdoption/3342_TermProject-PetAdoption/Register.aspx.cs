@@ -1,10 +1,10 @@
-﻿using System;
+﻿using _3342_TermProject_PetAdoption.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 namespace _3342_TermProject_PetAdoption
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -14,14 +14,23 @@ namespace _3342_TermProject_PetAdoption
 
         }
 
-        protected void btnLogin_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnCreateAccount_Clicked(object sender, EventArgs e)
         {
-
+            Account newAccount = new Account();
+            newAccount.username = username_input.Text;
+            newAccount.email = email_input.Text;
+            if (userPet.Checked)
+            {
+                newAccount.accountType = userPet.Value;
+            }
+            else
+            {
+                newAccount.accountType = userShelter.Value;
+            }
+            newAccount.password = password_input.Text;
+            newAccount.phoneNum = phone_input.Text;
+            newAccount.city = city_input.Text;
+            newAccount.state = state_input.SelectedItem.Value;
         }
     }
 }

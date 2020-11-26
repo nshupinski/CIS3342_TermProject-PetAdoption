@@ -34,13 +34,13 @@
                         <p class="description"><small>If you are browsing pets or interested in adopting, choose <b>Pet Adopter</b>. If you are a shelter, rescue or veterinary clinic who rehomes pets, choose <b>Shelters & Rescues</b>.</small></p>
                       <div class="col-sm-5">
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="userType" id="userPet" value="PetAdopter" checked/>
+                          <input class="form-check-input" type="radio" name="userType" id="userPet" value="PetAdopter" runat="server" checked/>
                           <label class="form-check-label" for="userPet">
                             Pet Adopter
                           </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="userType" id="userShelter" value="SheltersRescues"/>
+                          <input class="form-check-input" type="radio" name="userType" id="userShelter" value="SheltersRescues" runat="server"/>
                           <label class="form-check-label" for="userShelter">
                             Shelters & Rescues
                           </label>
@@ -59,60 +59,60 @@
                   <label for="city_input"><small><b>City</b></small></label>
                   <asp:TextBox runat="server" id="city_input" class="form-control col-md-11 input" type="text" Placeholder="City"></asp:TextBox><br />
                   <label for="state_input"><small><b>State</b></small></label>
-                      <select id="state_input" class="form-control col-md-11 input">
-                              <option value="" selected="selected">Select a State</option>
-                              <option value="AL">Alabama</option>
-                              <option value="AK">Alaska</option>
-                              <option value="AZ">Arizona</option>
-                              <option value="AR">Arkansas</option>
-                              <option value="CA">California</option>
-                              <option value="CO">Colorado</option>
-                              <option value="CT">Connecticut</option>
-                              <option value="DE">Delaware</option>
-                              <option value="DC">District Of Columbia</option>
-                              <option value="FL">Florida</option>
-                              <option value="GA">Georgia</option>
-                              <option value="HI">Hawaii</option>
-                              <option value="ID">Idaho</option>
-                              <option value="IL">Illinois</option>
-                              <option value="IN">Indiana</option>
-                              <option value="IA">Iowa</option>
-                              <option value="KS">Kansas</option>
-                              <option value="KY">Kentucky</option>
-                              <option value="LA">Louisiana</option>
-                              <option value="ME">Maine</option>
-                              <option value="MD">Maryland</option>
-                              <option value="MA">Massachusetts</option>
-                              <option value="MI">Michigan</option>
-                              <option value="MN">Minnesota</option>
-                              <option value="MS">Mississippi</option>
-                              <option value="MO">Missouri</option>
-                              <option value="MT">Montana</option>
-                              <option value="NE">Nebraska</option>
-                              <option value="NV">Nevada</option>
-                              <option value="NH">New Hampshire</option>
-                              <option value="NJ">New Jersey</option>
-                              <option value="NM">New Mexico</option>
-                              <option value="NY">New York</option>
-                              <option value="NC">North Carolina</option>
-                              <option value="ND">North Dakota</option>
-                              <option value="OH">Ohio</option>
-                              <option value="OK">Oklahoma</option>
-                              <option value="OR">Oregon</option>
-                              <option value="PA">Pennsylvania</option>
-                              <option value="RI">Rhode Island</option>
-                              <option value="SC">South Carolina</option>
-                              <option value="SD">South Dakota</option>
-                              <option value="TN">Tennessee</option>
-                              <option value="TX">Texas</option>
-                              <option value="UT">Utah</option>
-                              <option value="VT">Vermont</option>
-                              <option value="VA">Virginia</option>
-                              <option value="WA">Washington</option>
-                              <option value="WV">West Virginia</option>
-                              <option value="WI">Wisconsin</option>
-                              <option value="WY">Wyoming</option>
-                      </select>
+                      <<asp:DropDownList id="state_input" class="form-control col-md-11 input" runat="server">
+                              <asp:ListItem value="" selected="selected">Select a State</asp:ListItem>
+                              <asp:ListItem value="AL">Alabama</asp:ListItem>
+                              <asp:ListItem value="AK">Alaska</asp:ListItem>
+                              <asp:ListItem value="AZ">Arizona</asp:ListItem>
+                              <asp:ListItem value="AR">Arkansas</asp:ListItem>
+                              <asp:ListItem value="CA">California</asp:ListItem>
+                              <asp:ListItem value="CO">Colorado</asp:ListItem>
+                              <asp:ListItem value="CT">Connecticut</asp:ListItem>
+                              <asp:ListItem value="DE">Delaware</asp:ListItem>
+                              <asp:ListItem value="DC">District Of Columbia</asp:ListItem>
+                              <asp:ListItem value="FL">Florida</asp:ListItem>
+                              <asp:ListItem value="GA">Georgia</asp:ListItem>
+                              <asp:ListItem value="HI">Hawaii</asp:ListItem>
+                              <asp:ListItem value="ID">Idaho</asp:ListItem>
+                              <asp:ListItem value="IL">Illinois</asp:ListItem>
+                              <asp:ListItem value="IN">Indiana</asp:ListItem>
+                              <asp:ListItem value="IA">Iowa</asp:ListItem>
+                              <asp:ListItem value="KS">Kansas</asp:ListItem>
+                              <asp:ListItem value="KY">Kentucky</asp:ListItem>
+                              <asp:ListItem value="LA">Louisiana</asp:ListItem>
+                              <asp:ListItem value="ME">Maine</asp:ListItem>
+                              <asp:ListItem value="MD">Maryland</asp:ListItem>
+                              <asp:ListItem value="MA">Massachusetts</asp:ListItem>
+                              <asp:ListItem value="MI">Michigan</asp:ListItem>
+                              <asp:ListItem value="MN">Minnesota</asp:ListItem>
+                              <asp:ListItem value="MS">Mississippi</asp:ListItem>
+                              <asp:ListItem value="MO">Missouri</asp:ListItem>
+                              <asp:ListItem value="MT">Montana</asp:ListItem>
+                              <asp:ListItem value="NE">Nebraska</asp:ListItem>
+                              <asp:ListItem value="NV">Nevada</asp:ListItem>
+                              <asp:ListItem value="NH">New Hampshire</asp:ListItem>
+                              <asp:ListItem value="NJ">New Jersey</asp:ListItem>
+                              <asp:ListItem value="NM">New Mexico</asp:ListItem>
+                              <asp:ListItem value="NY">New York</asp:ListItem>
+                              <asp:ListItem value="NC">North Carolina</asp:ListItem>
+                              <asp:ListItem value="ND">North Dakota</asp:ListItem>
+                              <asp:ListItem value="OH">Ohio</asp:ListItem>
+                              <asp:ListItem value="OK">Oklahoma</asp:ListItem>
+                              <asp:ListItem value="OR">Oregon</asp:ListItem>
+                              <asp:ListItem value="PA">Pennsylvania</asp:ListItem>
+                              <asp:ListItem value="RI">Rhode Island</asp:ListItem>
+                              <asp:ListItem value="SC">South Carolina</asp:ListItem>
+                              <asp:ListItem value="SD">South Dakota</asp:ListItem>
+                              <asp:ListItem value="TN">Tennessee</asp:ListItem>
+                              <asp:ListItem value="TX">Texas</asp:ListItem>
+                              <asp:ListItem value="UT">Utah</asp:ListItem>
+                              <asp:ListItem value="VT">Vermont</asp:ListItem>
+                              <asp:ListItem value="VA">Virginia</asp:ListItem>
+                              <asp:ListItem value="WA">Washington</asp:ListItem>
+                              <asp:ListItem value="WV">West Virginia</asp:ListItem>
+                              <asp:ListItem value="WI">Wisconsin</asp:ListItem>
+                              <asp:ListItem value="WY">Wyoming</asp:ListItem>
+                      </asp:DropDownList>
   
              </div>
                 <footer class="card-footer"><center>

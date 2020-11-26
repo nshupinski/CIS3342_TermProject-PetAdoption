@@ -14,12 +14,15 @@
     <div class="bg">
         <form id="loginForm" runat="server">
             <nav class="navbar navbar-light bg-light fixed-top navbar-expand-md">
-        <div id="navbar" class="navbar-collapse collapse">
-            <a class="navbar-brand">
-                APP NAME PENDING?
-            </a>
-        </div>
-    </nav>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <a class="navbar-brand">
+                        APP NAME PENDING?
+                    </a>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                        <asp:Button ID="btnDeleteCookie" class="btn btn-dark" runat="server" Text="Delete Cookie" onclick="btnDeleteCookie_Clicked"></asp:Button> 
+                    </div>
+                </div>
+            </nav>
             <br />
             <div class="card">
               <header class="card-header">
