@@ -10,5 +10,10 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class AccountsController : Controller
     {
+        //[HttpGet]
+        //public Account GetAccount(string username, string password)
+        //{
+
+        //}
     }
 }

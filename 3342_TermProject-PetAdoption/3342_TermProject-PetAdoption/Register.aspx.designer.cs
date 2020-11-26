@@ -31,6 +31,24 @@ namespace _3342_TermProject_PetAdoption {
         protected global::System.Web.UI.WebControls.Label lblErrors;
         
         /// <summary>
+        /// userPet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton userPet;
+        
+        /// <summary>
+        /// userShelter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton userShelter;
+        
+        /// <summary>
         /// email_input control.
         /// </summary>
         /// <remarks>
@@ -74,6 +92,15 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox city_input;
+        
+        /// <summary>
+        /// state_input control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList state_input;
         
         /// <summary>
         /// btnSubmit_createAccount control.
