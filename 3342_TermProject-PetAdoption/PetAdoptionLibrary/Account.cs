@@ -15,5 +15,11 @@ namespace _3342_TermProject_PetAdoption.Models
         public string phoneNum { get; set; }
         public string city { get; set; }
         public string state { get; set; }
+
+
+        public Account()
+        {
+
+        }
     }
 }
