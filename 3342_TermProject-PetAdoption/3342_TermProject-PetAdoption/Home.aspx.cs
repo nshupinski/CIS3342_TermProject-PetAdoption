@@ -13,5 +13,10 @@ namespace _3342_TermProject_PetAdoption
         {
 
         }
+
+        protected void btnCompatTest_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
