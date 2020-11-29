@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PetAdoptionLibrary;
 
 namespace WebAPI.Controllers
 {
@@ -15,5 +16,12 @@ namespace WebAPI.Controllers
         //{
 
         //}
+
+
+        /*[HttpGet("AllPets")]
+        public Pet[] GetAllPets()
+        {
+
+        }*/
     }
 }
