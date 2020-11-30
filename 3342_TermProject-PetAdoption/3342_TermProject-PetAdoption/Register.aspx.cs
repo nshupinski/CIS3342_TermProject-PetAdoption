@@ -34,6 +34,12 @@ namespace _3342_TermProject_PetAdoption
             newAccount.secAnswer1 = secAnswer1.Text;
             newAccount.secAnswer2 = secAnswer2.Text;
             newAccount.secAnswer3 = secAnswer3.Text;
+
+            // if username/email/phone number is already in use, display this to the user in label and return
+            // if passwords don't match, display this to the user in label and return
+            // else
+            // send this account type to the API to add to the database
+            // redirect back to login
         }
     }
 }
