@@ -12803,6 +12803,7 @@
       "Microsoft.AspNetCore.Mvc.Formatters.Json >= 2.2.0",
       "Microsoft.AspNetCore.Mvc.Formatters.Xml >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
+      "Microsoft.AspNetCore.Session >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9"
     ]
@@ -12864,6 +12865,10 @@
           },
           "Microsoft.AspNetCore.Razor.Design": {
             "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.AspNetCore.Session": {
             "target": "Package",
             "version": "[2.2.0, )"
           },
