@@ -31,6 +31,9 @@ namespace _3342_TermProject_PetAdoption
             newAccount.phoneNum = phone_input.Text;
             newAccount.city = city_input.Text;
             newAccount.state = state_input.SelectedItem.Value;
+            newAccount.secAnswer1 = secAnswer1.Text;
+            newAccount.secAnswer2 = secAnswer2.Text;
+            newAccount.secAnswer3 = secAnswer3.Text;
         }
     }
 }
