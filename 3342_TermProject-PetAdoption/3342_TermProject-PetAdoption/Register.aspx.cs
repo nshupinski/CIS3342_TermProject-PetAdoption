@@ -5,6 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Script.Serialization;
+using System.Net;
+using System.IO;
+
 namespace _3342_TermProject_PetAdoption
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -39,6 +43,16 @@ namespace _3342_TermProject_PetAdoption
             // if passwords don't match, display this to the user in label and return
             // else
             // send this account type to the API to add to the database
+
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            String jsonAccount = js.Serialize(newAccount);
+
+            try
+            {
+                WebRequest request = WebRequest.Create();
+            }
+          
+
             // redirect back to login
         }
     }
