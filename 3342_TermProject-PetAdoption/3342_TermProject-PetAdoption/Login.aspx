@@ -31,7 +31,11 @@
               <div class="card-body">
                     <asp:Label ID="lblErrors" runat="server" Text=""></asp:Label>
                   <p><asp:TextBox runat="server" id="username_input" class="form-control" type="text" Placeholder="Username"></asp:TextBox></p>
-                  <p><asp:TextBox runat="server" id="password_input" class="form-control" type="text" Placeholder="Password"></asp:TextBox></p>
+                  <p>
+                      <asp:Button ID="btnForgotPassword" class="btn btn-light col-md-4" style="float: right" runat="server" type="submit" Text="Forgot Password?"></asp:Button>
+                      <asp:TextBox runat="server" id="password_input" class="form-control col-md-7" type="text" Placeholder="Password"></asp:TextBox>
+                  </p>
+                  
                    <fieldset class="form-group">
                     <div class="row">
                       <p class="col-form-label col-sm-5 pt-0">Account Type</p>
@@ -55,6 +59,7 @@
               <footer class="card-footer"><center>
                 <asp:Button ID="btnSubmit_login" class="btn btn-dark" runat="server" Text="Login" onclick="btnLogin_Clicked"></asp:Button>
                 <asp:Button ID="btnSubmit_createAccount" class="btn btn-dark" runat="server" type="submit" Text="Create Account" onclick="btnCreateAccount_Clicked"></asp:Button>
+               
               </center></footer>
             </div>
         </form>

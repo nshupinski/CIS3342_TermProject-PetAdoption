@@ -15,5 +15,8 @@ namespace WebAPI
         public int phoneNum { get; set; }
         public string city { get; set; }
         public string state { get; set; }
+        public string secAnswer1 { get; set; }
+        public string secAnswer2 { get; set; }
+        public string secAnswer3 { get; set; }
     }
 }

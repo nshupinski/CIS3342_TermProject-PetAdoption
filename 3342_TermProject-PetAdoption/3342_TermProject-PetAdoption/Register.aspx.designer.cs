@@ -103,6 +103,33 @@ namespace _3342_TermProject_PetAdoption {
         protected global::System.Web.UI.WebControls.DropDownList state_input;
         
         /// <summary>
+        /// secAnswer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox secAnswer1;
+        
+        /// <summary>
+        /// secAnswer2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox secAnswer2;
+        
+        /// <summary>
+        /// secAnswer3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox secAnswer3;
+        
+        /// <summary>
         /// btnSubmit_createAccount control.
         /// </summary>
         /// <remarks>
