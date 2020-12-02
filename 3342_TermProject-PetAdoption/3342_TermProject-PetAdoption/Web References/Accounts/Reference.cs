@@ -44,7 +44,8 @@ namespace _3342_TermProject_PetAdoption.Accounts {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
-        
+
+
         public new string Url {
             get {
                 return base.Url;
@@ -128,8 +129,6 @@ namespace _3342_TermProject_PetAdoption.Accounts {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class Account {
         
-        private int userIDField;
-        
         private string usernameField;
         
         private string emailField;
@@ -149,16 +148,6 @@ namespace _3342_TermProject_PetAdoption.Accounts {
         private string secAnswer2Field;
         
         private string secAnswer3Field;
-        
-        /// <remarks/>
-        public int userID {
-            get {
-                return this.userIDField;
-            }
-            set {
-                this.userIDField = value;
-            }
-        }
         
         /// <remarks/>
         public string username {

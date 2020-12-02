@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PetAdoptionLibrary
+namespace PetsSOAP
 {
     public class Account
     {

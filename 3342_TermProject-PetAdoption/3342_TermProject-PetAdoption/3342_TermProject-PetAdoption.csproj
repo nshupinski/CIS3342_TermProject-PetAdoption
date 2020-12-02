@@ -144,6 +144,10 @@
       <Project>{d6b1e03a-cecd-4ef3-9bce-9e817cf7a279}</Project>
       <Name>PetAdoptionLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PetsSOAP\PetsSOAP.csproj">
+      <Project>{e8925a15-4763-4dab-9c63-ac0792b316c6}</Project>
+      <Name>PetsSOAP</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

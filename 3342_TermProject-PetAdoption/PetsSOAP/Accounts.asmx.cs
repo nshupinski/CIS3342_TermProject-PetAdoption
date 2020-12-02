@@ -34,7 +34,7 @@ namespace PetsSOAP
                 addAccountCmd.Parameters.AddWithValue("@username", newAccount.username);
                 addAccountCmd.Parameters.AddWithValue("@email", newAccount.email);
                 addAccountCmd.Parameters.AddWithValue("@accountType", newAccount.accountType);
-                addAccountCmd.Parameters.AddWithValue("@passwords", newAccount.password);
+                addAccountCmd.Parameters.AddWithValue("@password", newAccount.password);
                 addAccountCmd.Parameters.AddWithValue("@phoneNum", newAccount.phoneNum);
                 addAccountCmd.Parameters.AddWithValue("@city", newAccount.city);
                 addAccountCmd.Parameters.AddWithValue("@state", newAccount.state);
@@ -53,7 +53,6 @@ namespace PetsSOAP
                 {
                     return false;
                 }
-
 
             }
 
