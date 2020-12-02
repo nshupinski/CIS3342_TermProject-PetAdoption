@@ -25,34 +25,44 @@ namespace WebAPI.Controllers
         //}
 
         [HttpPost("AddAccount")]
-        public Boolean Post([FromBody] Account newAccount)
+        public Boolean AddAccount([FromBody] Account newAccount)
         {
-            DBConnect objDB = new DBConnect();
-            SqlCommand addAccountCmd = new SqlCommand();
-            addAccountCmd.CommandType = CommandType.StoredProcedure;
-            addAccountCmd.CommandText = "TP_AddUser";
 
-            addAccountCmd.Parameters.AddWithValue("@username", newAccount.username);
-            addAccountCmd.Parameters.AddWithValue("@email", newAccount.email);
-            addAccountCmd.Parameters.AddWithValue("@accountType", newAccount.accountType);
-            addAccountCmd.Parameters.AddWithValue("@passwords", newAccount.password);
-            addAccountCmd.Parameters.AddWithValue("@phoneNum", newAccount.phoneNum);
-            addAccountCmd.Parameters.AddWithValue("@city", newAccount.city);
-            addAccountCmd.Parameters.AddWithValue("@state", newAccount.state);
-            addAccountCmd.Parameters.AddWithValue("@answer1", newAccount.secAnswer1);
-            addAccountCmd.Parameters.AddWithValue("@answer2", newAccount.secAnswer2);
-            addAccountCmd.Parameters.AddWithValue("@answer3", newAccount.secAnswer3);
-
-
-            int success = objDB.DoUpdateUsingCmdObj(addAccountCmd);
-
-            if(success > 0)
+            if (newAccount != null)
             {
-                return true;
+                DBConnect objDB = new DBConnect();
+                SqlCommand addAccountCmd = new SqlCommand();
+
+                addAccountCmd.CommandType = CommandType.StoredProcedure;
+                addAccountCmd.CommandText = "TP_AddUser";
+
+                addAccountCmd.Parameters.AddWithValue("@username", newAccount.username);
+                addAccountCmd.Parameters.AddWithValue("@email", newAccount.email);
+                addAccountCmd.Parameters.AddWithValue("@accountType", newAccount.accountType);
+                addAccountCmd.Parameters.AddWithValue("@passwords", newAccount.password);
+                addAccountCmd.Parameters.AddWithValue("@phoneNum", newAccount.phoneNum);
+                addAccountCmd.Parameters.AddWithValue("@city", newAccount.city);
+                addAccountCmd.Parameters.AddWithValue("@state", newAccount.state);
+                addAccountCmd.Parameters.AddWithValue("@answer1", newAccount.secAnswer1);
+                addAccountCmd.Parameters.AddWithValue("@answer2", newAccount.secAnswer2);
+                addAccountCmd.Parameters.AddWithValue("@answer3", newAccount.secAnswer3);
+
+
+                int success = objDB.DoUpdateUsingCmdObj(addAccountCmd);
+
+                if (success > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+                
             }
 
             return false;
-
         }
 
 

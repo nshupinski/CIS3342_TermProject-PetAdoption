@@ -49,11 +49,39 @@ namespace _3342_TermProject_PetAdoption
 
             try
             {
-                WebRequest request = WebRequest.Create();
+                WebRequest request = WebRequest.Create("https://localhost:44311/api/AddAccount");
+                request.Method = "POST";
+                request.ContentLength = jsonAccount.Length;
+                request.ContentType = "application/json";
+
+                StreamWriter writer = new StreamWriter(request.GetRequestStream());
+                writer.Write(jsonAccount);
+                writer.Flush();
+                writer.Close();
+
+                WebResponse response = request.GetResponse();
+                Stream theDataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(theDataStream);
+                String data = reader.ReadToEnd();
+                reader.Close();
+                response.Close();
+
+                if (data == "true")
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+
+                }
+            }
+            catch(Exception ex)
+            {
+
             }
           
 
-            // redirect back to login
+            
         }
     }
 }
