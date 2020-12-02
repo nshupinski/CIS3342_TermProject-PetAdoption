@@ -7,7 +7,6 @@ namespace WebAPI
 {
     public class Account
     {
-        public int userID { get; set; }
         public string username { get; set; }
         public string email { get; set; }
         public string accountType { get; set; }

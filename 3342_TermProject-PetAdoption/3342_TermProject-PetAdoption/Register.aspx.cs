@@ -1,5 +1,4 @@
-﻿using _3342_TermProject_PetAdoption.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Web.Script.Serialization;
 using System.Net;
 using System.IO;
+using _3342_TermProject_PetAdoption.Accounts;
 
 namespace _3342_TermProject_PetAdoption
 {
@@ -44,16 +44,10 @@ namespace _3342_TermProject_PetAdoption
             // else
             // send this account type to the API to add to the database
 
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            String jsonAccount = js.Serialize(newAccount);
+            Accounts.Accounts proxy = new Accounts.Accounts();
+            Boolean result = proxy.AddAccount(newAccount);
 
-            try
-            {
-                WebRequest request = WebRequest.Create();
-            }
-          
-
-            // redirect back to login
+            
         }
     }
 }

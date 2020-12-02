@@ -120,3 +120,6 @@ C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\roslyn\System.Net.Sockets.dll
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\PetsSOAP.dll
+C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\PetsSOAP.pdb
+C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\PetsSOAP.dll.config
