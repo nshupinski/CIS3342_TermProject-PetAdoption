@@ -44,42 +44,8 @@ namespace _3342_TermProject_PetAdoption
             // else
             // send this account type to the API to add to the database
 
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            String jsonAccount = js.Serialize(newAccount);
-
-            try
-            {
-                WebRequest request = WebRequest.Create("https://localhost:44311/api/AddAccount");
-                request.Method = "POST";
-                request.ContentLength = jsonAccount.Length;
-                request.ContentType = "application/json";
-
-                StreamWriter writer = new StreamWriter(request.GetRequestStream());
-                writer.Write(jsonAccount);
-                writer.Flush();
-                writer.Close();
-
-                WebResponse response = request.GetResponse();
-                Stream theDataStream = response.GetResponseStream();
-                StreamReader reader = new StreamReader(theDataStream);
-                String data = reader.ReadToEnd();
-                reader.Close();
-                response.Close();
-
-                if (data == "true")
-                {
-                    Response.Redirect("Login.aspx");
-                }
-                else
-                {
-
-                }
-            }
-            catch(Exception ex)
-            {
-
-            }
-          
+            Accounts.Accounts proxy = new Accounts.Accounts();
+            Boolean result = proxy.AddAccount(newAccount);
 
             
         }

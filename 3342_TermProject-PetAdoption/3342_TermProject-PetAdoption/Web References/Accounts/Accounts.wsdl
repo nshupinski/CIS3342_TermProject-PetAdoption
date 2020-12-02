@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newAccount" type="tns:Account" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Account">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="secAnswer1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="secAnswer2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="secAnswer3" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAccount" />
+  </wsdl:message>
+  <wsdl:message name="AddAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAccountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AccountsSoap">
+    <wsdl:operation name="AddAccount">
+      <wsdl:input message="tns:AddAccountSoapIn" />
+      <wsdl:output message="tns:AddAccountSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountsSoap" type="tns:AccountsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddAccount">
+      <soap:operation soapAction="http://tempuri.org/AddAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AccountsSoap12" type="tns:AccountsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddAccount">
+      <soap12:operation soapAction="http://tempuri.org/AddAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Accounts">
+    <wsdl:port name="AccountsSoap" binding="tns:AccountsSoap">
+      <soap:address location="https://localhost:44372/Accounts.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AccountsSoap12" binding="tns:AccountsSoap12">
+      <soap12:address location="https://localhost:44372/Accounts.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
