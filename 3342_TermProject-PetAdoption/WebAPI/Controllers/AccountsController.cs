@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
 
         //}
 
-        [HttpPost]
+        [HttpPost("AddAccount")]
         public Boolean Post([FromBody] Account newAccount)
         {
             DBConnect objDB = new DBConnect();
