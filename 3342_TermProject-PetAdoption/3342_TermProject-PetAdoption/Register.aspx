@@ -54,6 +54,8 @@
                   <asp:TextBox runat="server" id="username_input" class="form-control col-md-11 input" type="text" Placeholder="Username"></asp:TextBox><br />
                   <label for="password_input"><small><b>Password</b></small></label>
                   <asp:TextBox runat="server" id="password_input" class="form-control col-md-11 input" type="text" Placeholder="Password"></asp:TextBox><br />
+                  <label for="password2_input"><small><b>Confirm Password</b></small></label>
+                  <asp:TextBox runat="server" id="password2_input" class="form-control col-md-11 input" type="text" Placeholder="Confirm Password"></asp:TextBox><br />
                   <label for="phone_input"><small><b>Phone Number</b></small></label>
                   <asp:TextBox runat="server" id="phone_input" class="form-control col-md-11 input" type="text" Placeholder="Phone Number"></asp:TextBox><br />
                   <label for="city_input"><small><b>City</b></small></label>
@@ -123,7 +125,7 @@
                   <label for="secAnswer3"><small><b>Security Question #3</b></small></label>
                   <label class="question"><small>What is the name of your favorite pet?</small></label>
                   <asp:TextBox runat="server" id="secAnswer3" class="form-control col-md-11 input" type="text" Placeholder="Ex: Phil"></asp:TextBox><br />
-  
+
              </div>
                 <footer class="card-footer"><center>
                 <asp:Button ID="btnSubmit_createAccount" class="btn btn-dark" runat="server" type="submit" Text="Create Account" onclick="btnCreateAccount_Clicked"></asp:Button>
