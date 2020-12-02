@@ -64,6 +64,19 @@ namespace _3342_TermProject_PetAdoption
                 return;
             }
 
+            long value;
+            Boolean parse = Int64.TryParse(phone_input.Text, out value);
+
+            if (Int64.TryParse(phone_input.Text, out value))
+            {
+                
+            }
+            else
+            {
+                lblErrors.Text = "Phone number is not in a valid format.";
+                return;
+            }
+
             if (!validatePhone(phone_input.Text))
             {
                 newAccount.phoneNum = phone_input.Text;
@@ -75,7 +88,17 @@ namespace _3342_TermProject_PetAdoption
             }
 
             newAccount.city = city_input.Text;
-            newAccount.state = state_input.SelectedItem.Value;
+
+            if(state_input.SelectedItem.Value == "")
+            {
+                lblErrors.Text = "Please select a state.";
+                return;
+            }
+            else
+            {
+                newAccount.state = state_input.SelectedItem.Value;
+            }
+
             newAccount.secAnswer1 = secAnswer1.Text;
             newAccount.secAnswer2 = secAnswer2.Text;
             newAccount.secAnswer3 = secAnswer3.Text;
@@ -89,7 +112,7 @@ namespace _3342_TermProject_PetAdoption
             }
             else
             {
-                lblErrors.Text = "Account could not be created, Check back later."
+                lblErrors.Text = "Account could not be created, Check back later.";
             }
         }
 
