@@ -49,15 +49,17 @@
                     </div>
                   </fieldset>
                   <label for="email_input"><small><b>Email</b></small></label>
-                  <asp:TextBox runat="server" id="email_input" class="form-control col-md-11 input" type="text" Placeholder="Email"></asp:TextBox><br />
+                  <asp:TextBox runat="server" id="email_input" class="form-control col-md-11 input" type="text" Placeholder="Email" required></asp:TextBox><br />
                   <label for="username_input"><small><b>Username</b></small></label>
-                  <asp:TextBox runat="server" id="username_input" class="form-control col-md-11 input" type="text" Placeholder="Username"></asp:TextBox><br />
+                  <asp:TextBox runat="server" id="username_input" class="form-control col-md-11 input" type="text" Placeholder="Username" required></asp:TextBox><br />
                   <label for="password_input"><small><b>Password</b></small></label>
-                  <asp:TextBox runat="server" id="password_input" class="form-control col-md-11 input" type="text" Placeholder="Password"></asp:TextBox><br />
+                  <asp:TextBox runat="server" id="password_input" class="form-control col-md-11 input" type="text" Placeholder="Password" required></asp:TextBox><br />
+                  <label for="password2_input"><small><b>Confirm Password</b></small></label>
+                  <asp:TextBox runat="server" id="password2_input" class="form-control col-md-11 input" type="text" Placeholder="Confirm Password" required></asp:TextBox><br />
                   <label for="phone_input"><small><b>Phone Number</b></small></label>
-                  <asp:TextBox runat="server" id="phone_input" class="form-control col-md-11 input" type="text" Placeholder="Phone Number"></asp:TextBox><br />
+                  <asp:TextBox runat="server" id="phone_input" class="form-control col-md-11 input" type="text" Placeholder="Phone Number" required></asp:TextBox><br />
                   <label for="city_input"><small><b>City</b></small></label>
-                  <asp:TextBox runat="server" id="city_input" class="form-control col-md-11 input" type="text" Placeholder="City"></asp:TextBox><br />
+                  <asp:TextBox runat="server" id="city_input" class="form-control col-md-11 input" type="text" Placeholder="City" required></asp:TextBox><br />
                   <label for="state_input"><small><b>State</b></small></label>
                       <asp:DropDownList id="state_input" class="form-control col-md-11 input" runat="server">
                               <asp:ListItem value="" selected="selected">Select a State</asp:ListItem>
@@ -116,14 +118,14 @@
                       <br />
                   <label for="secAnswer1"><small><b>Security Question #1</b></small></label>
                   <label class="question"><small>What was your childhood nickname?</small></label>
-                  <asp:TextBox runat="server" id="secAnswer1" class="form-control col-md-11 input" type="text" Placeholder="Ex: Jenny"></asp:TextBox><br />
+                  <asp:TextBox runat="server" id="secAnswer1" class="form-control col-md-11 input" type="text" Placeholder="Ex: Jenny" required></asp:TextBox><br />
                   <label for="secAnswer2"><small><b>Security Question #2</b></small></label>
                   <label class="question"><small>What was the last name of your third-grade teacher?</small></label>
-                  <asp:TextBox runat="server" id="secAnswer2" class="form-control col-md-11 input" type="text" Placeholder="Ex: Smith"></asp:TextBox><br />
+                  <asp:TextBox runat="server" id="secAnswer2" class="form-control col-md-11 input" type="text" Placeholder="Ex: Smith" required></asp:TextBox><br />
                   <label for="secAnswer3"><small><b>Security Question #3</b></small></label>
                   <label class="question"><small>What is the name of your favorite pet?</small></label>
-                  <asp:TextBox runat="server" id="secAnswer3" class="form-control col-md-11 input" type="text" Placeholder="Ex: Phil"></asp:TextBox><br />
-  
+                  <asp:TextBox runat="server" id="secAnswer3" class="form-control col-md-11 input" type="text" Placeholder="Ex: Phil" required></asp:TextBox><br />
+
              </div>
                 <footer class="card-footer"><center>
                 <asp:Button ID="btnSubmit_createAccount" class="btn btn-dark" runat="server" type="submit" Text="Create Account" onclick="btnCreateAccount_Clicked"></asp:Button>

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _3342_TermProject_PetAdoption {
-    
-    
-    public partial class WebForm1 {
-        
+namespace _3342_TermProject_PetAdoption
+{
+
+
+    public partial class WebForm1
+    {
+
         /// <summary>
         /// loginForm control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm loginForm;
-        
+
         /// <summary>
         /// lblErrors control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblErrors;
-        
+
         /// <summary>
         /// userPet control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton userPet;
-        
+
         /// <summary>
         /// userShelter control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton userShelter;
-        
+
         /// <summary>
         /// email_input control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox email_input;
-        
+
         /// <summary>
         /// username_input control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox username_input;
-        
+
         /// <summary>
         /// password_input control.
         /// </summary>
@@ -74,7 +76,16 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password_input;
-        
+
+        /// <summary>
+        /// password2_input control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox password2_input;
+
         /// <summary>
         /// phone_input control.
         /// </summary>
@@ -83,7 +94,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox phone_input;
-        
+
         /// <summary>
         /// city_input control.
         /// </summary>
@@ -92,7 +103,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox city_input;
-        
+
         /// <summary>
         /// state_input control.
         /// </summary>
@@ -101,7 +112,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList state_input;
-        
+
         /// <summary>
         /// secAnswer1 control.
         /// </summary>
@@ -110,7 +121,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox secAnswer1;
-        
+
         /// <summary>
         /// secAnswer2 control.
         /// </summary>
@@ -119,7 +130,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox secAnswer2;
-        
+
         /// <summary>
         /// secAnswer3 control.
         /// </summary>
@@ -128,7 +139,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox secAnswer3;
-        
+
         /// <summary>
         /// btnSubmit_createAccount control.
         /// </summary>
