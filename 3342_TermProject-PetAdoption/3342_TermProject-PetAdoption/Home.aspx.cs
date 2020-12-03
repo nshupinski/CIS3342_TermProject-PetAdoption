@@ -14,7 +14,10 @@ namespace _3342_TermProject_PetAdoption
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!(IsPostBack))
+            {
 
+            }
         }
 
         protected void btnCompatTest_Clicked(object sender, EventArgs e)
