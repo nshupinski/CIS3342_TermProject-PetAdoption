@@ -13,11 +13,11 @@ namespace _3342_TermProject_PetAdoption
     public partial class Verification : System.Web.UI.Page
     {
 
-        string username = "olivia";
+        string username;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           username = Session["Username"].ToString();
         }
 
         protected void btnVerify_Click(object sender, EventArgs e)

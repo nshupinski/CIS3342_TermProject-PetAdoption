@@ -12,18 +12,19 @@ namespace _3342_TermProject_PetAdoption
 {
     public partial class Login : System.Web.UI.Page
     {
-        string username;
-        string password;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Session.Add("UserType", null);
+                Session.Add("Username", null);
+            }
         }
 
         protected void btnLogin_Clicked(object sender, EventArgs e)
         {
-            username = username_input.Text;
-            password = password_input.Text;
+            string username = username_input.Text;
+            string password = password_input.Text;
             String userType;
 
             if (userPet.Checked)
@@ -40,6 +41,8 @@ namespace _3342_TermProject_PetAdoption
 
             if (result)
             {
+                Session["UserType"] = userType;
+                Session["Username"] = username;
 
                 WebRequest request = WebRequest.Create("https://localhost:44361/api/Account/GetUserVerified/" + username);
                 WebResponse response = request.GetResponse();
@@ -77,7 +80,9 @@ namespace _3342_TermProject_PetAdoption
 
         protected void btnDeleteCookie_Clicked(object sender, EventArgs e)
         {
-
+            Session["UserType"] = null;
+            Session["UserID"] = null;
+            Response.Redirect("Login.aspx");
         }
     }
 }

@@ -108,6 +108,8 @@ namespace _3342_TermProject_PetAdoption
 
             if (result)
             {
+                Session["UserType"] = newAccount.accountType;
+                Session["Username"] = newAccount.username;
                 generateVerification(username_input.Text);
                 Server.Transfer("Verification.aspx");
             }
