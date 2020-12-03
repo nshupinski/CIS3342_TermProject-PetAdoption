@@ -76,5 +76,21 @@ namespace PetsREST.Controllers
             return true;
 
         }
+
+        [HttpGet("GetVerificationCode/{username}")]
+        public string GetVerificationCode(string username)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand getCodeCmd = new SqlCommand();
+
+            getCodeCmd.CommandType = CommandType.StoredProcedure;
+            getCodeCmd.CommandText = "TP_GetVerificationCode";
+            getCodeCmd.Parameters.AddWithValue("@username", username);
+
+            DataSet data = objDB.GetDataSetUsingCmdObj(getCodeCmd);
+            string code = data.Tables[0].Rows[0][1].ToString();
+
+            return code;
+        }
     }
 }

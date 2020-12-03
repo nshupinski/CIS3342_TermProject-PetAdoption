@@ -37,7 +37,11 @@ namespace _3342_TermProject_PetAdoption
 
             if (result)
             {
+
+                //if verified 
                 Response.Redirect("Home.aspx");
+                // else
+                // redirect to verification page
             }
             else
             {

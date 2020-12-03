@@ -108,7 +108,8 @@ namespace _3342_TermProject_PetAdoption
 
             if (result)
             {
-                Server.Transfer("Login.aspx");
+                generateVerification(username_input.Text);
+                Server.Transfer("Verification.aspx");
             }
             else
             {
@@ -165,6 +166,31 @@ namespace _3342_TermProject_PetAdoption
             Boolean valid = js.Deserialize<Boolean>(data);
 
             return valid;
+        }
+
+        public void generateVerification(string username)
+        {
+
+            char[] chArray = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            string str = string.Empty;
+            Random random = new Random();
+            for (int i = 0; i < 6; i++)
+            {
+                int index = random.Next(1, chArray.Length);
+                if (!str.Contains(chArray.GetValue(index).ToString()))
+                {
+                    str = str + chArray.GetValue(index);
+                }
+                else
+                {
+                    i--;
+                }
+            }
+
+            PetsSOAP.Accounts proxy = new PetsSOAP.Accounts();
+            Boolean result = proxy.generateVerification(username, str);
+
+            //SEND EMAIL
         }
     }
 }
