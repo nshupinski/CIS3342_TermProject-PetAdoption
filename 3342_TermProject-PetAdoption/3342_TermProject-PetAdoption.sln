@@ -1,13 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1267
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3342_TermProject-PetAdoption", "3342_TermProject-PetAdoption\3342_TermProject-PetAdoption.csproj", "{CF7D4F74-19ED-4573-A280-DF977D9C8A93}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E8925A15-4763-4DAB-9C63-AC0792B316C6} = {E8925A15-4763-4DAB-9C63-AC0792B316C6}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetAdoptionLibrary", "PetAdoptionLibrary\PetAdoptionLibrary.csproj", "{D6B1E03A-CECD-4EF3-9BCE-9E817CF7A279}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{AA211235-2646-419C-8CDD-DA7CCBA5ECCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{AA211235-2646-419C-8CDD-DA7CCBA5ECCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsSOAP", "PetsSOAP\PetsSOAP.csproj", "{E8925A15-4763-4DAB-9C63-AC0792B316C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetsREST", "PetsREST\PetsREST.csproj", "{FBA233AC-EDF9-446F-9F73-A8BB786D2260}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +34,14 @@ Global
 		{AA211235-2646-419C-8CDD-DA7CCBA5ECCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA211235-2646-419C-8CDD-DA7CCBA5ECCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA211235-2646-419C-8CDD-DA7CCBA5ECCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8925A15-4763-4DAB-9C63-AC0792B316C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8925A15-4763-4DAB-9C63-AC0792B316C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8925A15-4763-4DAB-9C63-AC0792B316C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8925A15-4763-4DAB-9C63-AC0792B316C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA233AC-EDF9-446F-9F73-A8BB786D2260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA233AC-EDF9-446F-9F73-A8BB786D2260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA233AC-EDF9-446F-9F73-A8BB786D2260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA233AC-EDF9-446F-9F73-A8BB786D2260}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

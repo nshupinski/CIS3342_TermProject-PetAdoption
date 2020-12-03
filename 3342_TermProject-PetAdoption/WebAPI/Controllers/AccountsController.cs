@@ -15,7 +15,7 @@ using System.Collections;
 namespace WebAPI.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("Account/[controller]")]
     public class AccountsController : Controller
     {
         //[HttpGet]
@@ -24,38 +24,57 @@ namespace WebAPI.Controllers
 
         //}
 
-        [HttpPost]
-        public Boolean Post([FromBody] Account newAccount)
+        [HttpGet]
+        public Account GetUser(string username)
         {
+            Account user = new Account();
             DBConnect objDB = new DBConnect();
-            SqlCommand addAccountCmd = new SqlCommand();
-            addAccountCmd.CommandType = CommandType.StoredProcedure;
-            addAccountCmd.CommandText = "TP_AddUser";
+            SqlCommand getUserCmd = new SqlCommand();
 
-            addAccountCmd.Parameters.AddWithValue("@username", newAccount.username);
-            addAccountCmd.Parameters.AddWithValue("@email", newAccount.email);
-            addAccountCmd.Parameters.AddWithValue("@accountType", newAccount.accountType);
-            addAccountCmd.Parameters.AddWithValue("@passwords", newAccount.password);
-            addAccountCmd.Parameters.AddWithValue("@phoneNum", newAccount.phoneNum);
-            addAccountCmd.Parameters.AddWithValue("@city", newAccount.city);
-            addAccountCmd.Parameters.AddWithValue("@state", newAccount.state);
-            addAccountCmd.Parameters.AddWithValue("@answer1", newAccount.secAnswer1);
-            addAccountCmd.Parameters.AddWithValue("@answer2", newAccount.secAnswer2);
-            addAccountCmd.Parameters.AddWithValue("@answer3", newAccount.secAnswer3);
+            getUserCmd.CommandType = CommandType.StoredProcedure;
+            getUserCmd.CommandText = "TP_GetUserByUsername";
 
+            getUserCmd.Parameters.AddWithValue("@username", username);
 
-            int success = objDB.DoUpdateUsingCmdObj(addAccountCmd);
+            DataSet userData = objDB.GetDataSetUsingCmdObj(getUserCmd);
 
-            if(success > 0)
-            {
-                return true;
-            }
-
-            return false;
+            return user;
 
         }
 
+        [HttpGet("GetUserExists/{username}")]
+        public int GetUserExists(string username)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand getUserCmd = new SqlCommand();
 
-        
+            getUserCmd.CommandType = CommandType.StoredProcedure;
+            getUserCmd.CommandText = "TP_GetUserByUsername";
+
+            getUserCmd.Parameters.AddWithValue("@username", username);
+
+            int exists = objDB.DoUpdateUsingCmdObj(getUserCmd);
+
+            return exists;
+
+        }
+
+        [HttpGet]
+        public Account GetEmail(string email)
+        {
+            Account user = new Account();
+
+
+            return user;
+        }
+
+        [HttpGet]
+        public Account GetPhone(string phone)
+        {
+            Account user = new Account();
+
+
+            return user;
+        }
     }
 }
