@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -38,10 +41,27 @@ namespace _3342_TermProject_PetAdoption
             if (result)
             {
 
-                //if verified 
-                Response.Redirect("Home.aspx");
-                // else
-                // redirect to verification page
+                WebRequest request = WebRequest.Create("https://localhost:44361/api/Account/GetUserVerified/" + username);
+                WebResponse response = request.GetResponse();
+
+                Stream theDataStream = response.GetResponseStream();
+                StreamReader reader = new StreamReader(theDataStream);
+                String data = reader.ReadToEnd();
+                reader.Close();
+                response.Close();
+
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                Boolean verified = js.Deserialize<Boolean>(data);
+
+                if (verified)
+                {
+                    Response.Redirect("Home.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Verification.aspx");
+                }
+
             }
             else
             {

@@ -92,5 +92,28 @@ namespace PetsREST.Controllers
 
             return code;
         }
+
+        [HttpGet("GetUserVerified/{username}")]
+        public Boolean isUserVerfified(string username)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand isVerifiedCmd = new SqlCommand();
+
+            isVerifiedCmd.CommandType = CommandType.StoredProcedure;
+            isVerifiedCmd.CommandText = "TP_GetVerificationCode";
+            isVerifiedCmd.Parameters.AddWithValue("@username", username);
+
+            DataSet data = objDB.GetDataSetUsingCmdObj(isVerifiedCmd);
+            int value = Int32.Parse(data.Tables[0].Rows[0][2].ToString());
+
+            if (value == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
