@@ -58,5 +58,33 @@ namespace PetsSOAP
 
             return false;
         }
+
+        [WebMethod]
+        public Boolean verifyLogin(string username, string password, string accountType)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand loginCmd = new SqlCommand();
+
+            loginCmd.CommandType = CommandType.StoredProcedure;
+            loginCmd.CommandText = "TP_ValidateLogin";
+            loginCmd.Parameters.AddWithValue("@username", username);
+            loginCmd.Parameters.AddWithValue("@password", password);
+            loginCmd.Parameters.AddWithValue("@userType", accountType);
+
+            DataSet data = objDB.GetDataSetUsingCmdObj(loginCmd);
+            int value = Int32.Parse(data.Tables[0].Rows[0][0].ToString());
+
+            if(value == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
     }
+
 }

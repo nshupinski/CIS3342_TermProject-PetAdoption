@@ -1,6 +1,5 @@
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\PetAdoptionLibrary\bin\Debug\PetAdoptionLibrary.dll
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\PetAdoptionLibrary\bin\Debug\PetAdoptionLibrary.pdb
-C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\PetAdoptionLibrary\obj\Debug\PetAdoptionLibrary.csprojAssemblyReference.cache
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\PetAdoptionLibrary\obj\Debug\PetAdoptionLibrary.csproj.CoreCompileInputs.cache
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\PetAdoptionLibrary\obj\Debug\PetAdoptionLibrary.dll
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\PetAdoptionLibrary\obj\Debug\PetAdoptionLibrary.pdb

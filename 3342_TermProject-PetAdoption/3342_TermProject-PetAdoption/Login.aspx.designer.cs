@@ -69,6 +69,24 @@ namespace _3342_TermProject_PetAdoption
         protected global::System.Web.UI.WebControls.TextBox password_input;
 
         /// <summary>
+        /// userPet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton userPet;
+
+        /// <summary>
+        /// userShelter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton userShelter;
+
+        /// <summary>
         /// btnSubmit_login control.
         /// </summary>
         /// <remarks>
