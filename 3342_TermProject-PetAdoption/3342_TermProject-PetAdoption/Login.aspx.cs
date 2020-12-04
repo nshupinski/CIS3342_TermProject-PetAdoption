@@ -17,34 +17,23 @@ namespace _3342_TermProject_PetAdoption
             if (!IsPostBack)
             {
                 HttpCookie reqCookies = Request.Cookies["userInfo"];
+
                 if(reqCookies != null)
                 {
-                    Session.Add("UserType", reqCookies["UserType"].ToString());
-                    Session.Add("Username", reqCookies["Username"].ToString());
-                    string username = reqCookies["Username"].ToString();
+                    username_input.Text = reqCookies["Username"].ToString();
+                    password_input.Text = reqCookies["Password"].ToString();
+                    string userType = reqCookies["UserType"].ToString();
+                    checkCookies.Checked = true;
 
-                    WebRequest request = WebRequest.Create("https://localhost:44361/api/Account/GetUserVerified/" + username);
-                    WebResponse response = request.GetResponse();
-
-                    Stream theDataStream = response.GetResponseStream();
-                    StreamReader reader = new StreamReader(theDataStream);
-                    String data = reader.ReadToEnd();
-                    reader.Close();
-                    response.Close();
-
-                    JavaScriptSerializer js = new JavaScriptSerializer();
-                    Boolean verified = js.Deserialize<Boolean>(data);
-
-                    if (verified)
+                    if(userType == "PetAdopter")
                     {
-                        Response.Redirect("Home.aspx");
+                        userPet.Checked = true;
                     }
                     else
                     {
-                        Response.Redirect("Verification.aspx");
+                        userPet.Checked = false;
+                        userShelter.Checked = true;
                     }
-
-
                 }
                 else
                 {
@@ -90,11 +79,22 @@ namespace _3342_TermProject_PetAdoption
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 Boolean verified = js.Deserialize<Boolean>(data);
 
-                HttpCookie userInfo = new HttpCookie("userInfo");
-                userInfo["Username"] = username;
-                userInfo["UserType"] = userType;
-                userInfo.Expires.Add(new TimeSpan(12, 0, 0));
-                Response.Cookies.Add(userInfo);
+                if (checkCookies.Checked)
+                {
+                    HttpCookie userInfo = new HttpCookie("userInfo");
+                    userInfo["Username"] = username;
+                    userInfo["UserType"] = userType;
+                    userInfo["Password"] = password;
+                    userInfo.Expires.Add(new TimeSpan(12, 0, 0));
+                    Response.Cookies.Add(userInfo);
+                }
+                else
+                {
+                    if (Request.Cookies["userInfo"] != null)
+                    {
+                        Response.Cookies["userInfo"].Expires = DateTime.Now.AddDays(-1);
+                    }
+                }
 
                 if (verified)
                 {
