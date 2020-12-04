@@ -8,7 +8,6 @@ namespace PetAdoptionLibrary
 {
     public class Pet
     {
-
         string name;
         string userID;
         string animal;
