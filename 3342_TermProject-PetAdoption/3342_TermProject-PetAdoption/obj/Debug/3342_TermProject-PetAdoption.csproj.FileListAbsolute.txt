@@ -123,3 +123,6 @@ C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\PetsSOAP.dll
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\PetsSOAP.pdb
 C:\Users\jenni\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\PetsSOAP.dll.config
+C:\Users\bjenk\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\PetsSOAP.dll
+C:\Users\bjenk\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\PetsSOAP.pdb
+C:\Users\bjenk\Documents\GitHub\CIS3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\3342_TermProject-PetAdoption\bin\PetsSOAP.dll.config

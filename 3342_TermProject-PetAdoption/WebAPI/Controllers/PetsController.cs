@@ -20,10 +20,10 @@ namespace WebAPI.Controllers
             DataSet ds = procedures.SP_GetAllPets();
 
             List<Pet> pets = new List<Pet>();
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            foreach(DataRow row in ds.Tables[0].Rows)
             {
-                //Pet newPet = ds.Tables[0].Rows[i];
-                //pets.Add(ds.Tables[0].Rows[i]);
+                Pet newPet = new Pet();
+                newPet.name = row["name"].ToString();
             }
 
             return pets;

@@ -8,17 +8,20 @@ namespace PetAdoptionLibrary
 {
     public class Pet
     {
+        public string name { get; set; }
+        public string userID { get; set; }
+        public string animal { get; set; }
+        public string breed { get; set; }
+        public int goodWithKids { get; set; }
+        public int goodWithPets { get; set; }
+        public string location { get; set; }
+        public string ageRange { get; set; }
 
-        string name;
-        string userID;
-        string animal;
-        string breed;
-        bool goodWithKids;
-        bool goodWithPets;
-        string location;
-        string ageRange;
+        public Pet()
+        {
+        }
 
-        public Pet(string name, string userID, string animal, string breed, bool goodWithKids, bool goodWithPets, string location, string ageRange)
+        public Pet(string name, string userID, string animal, string breed, int goodWithKids, int goodWithPets, string location, string ageRange)
         {
             this.name = name;
             this.userID = userID;
