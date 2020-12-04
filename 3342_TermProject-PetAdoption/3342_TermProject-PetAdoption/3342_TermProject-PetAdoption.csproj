@@ -71,6 +71,7 @@
     <Content Include="CSS\Register_Stylesheet.css" />
     <Content Include="ForgetPassword.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="images\Felix.png" />
     <Content Include="Login.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -159,9 +160,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PetAdoptionLibrary\PetAdoptionLibrary.csproj">
       <Project>{d6b1e03a-cecd-4ef3-9bce-9e817cf7a279}</Project>

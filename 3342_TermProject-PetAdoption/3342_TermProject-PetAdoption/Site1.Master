@@ -20,13 +20,13 @@
     <div id="nav_bg">
         <ul class="nav">
           <li class="nav-item">
-            <a id="nav_title" class="nav-link active" href="#">Site Name</a>
+            <img src="images/Felix.png" />
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="padding-top: 22px;">Link</a>
+            <a class="nav-link" href="#" style="line-height:115px">Link</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="padding-top: 22px;">Link</a>
+            <a class="nav-link" href="#" style="line-height:115px;">Link</a>
           </li>
         </ul>
     </div>

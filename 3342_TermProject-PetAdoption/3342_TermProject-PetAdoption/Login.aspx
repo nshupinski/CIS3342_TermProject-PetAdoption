@@ -1,29 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="_3342_TermProject_PetAdoption.Login" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="_3342_TermProject_PetAdoption.Login" MasterPageFile="~/Site1.Master"%>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Log In</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/Login_Stylesheet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 
-</head>
-<body>
+    </asp:Content>
+    <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bg">
-        <form id="loginForm" runat="server">
-            <nav class="navbar navbar-light bg-light fixed-top navbar-expand-md">
-                <div id="navbar" class="navbar-collapse collapse">
-                    <a class="navbar-brand">
-                        APP NAME PENDING?
-                    </a>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-                        <asp:Button ID="btnDeleteCookie" class="btn btn-dark" runat="server" Text="Delete Cookie" onclick="btnDeleteCookie_Clicked"></asp:Button> 
-                    </div>
-                </div>
-            </nav>
-            <br />
             <div class="card">
               <header class="card-header">
                   Please Sign In
@@ -57,7 +42,7 @@
                      </fieldset>
                   <div id="cookies">
                   
-                        <input class="form-check-input" type="checkbox" value="" id="checkCookies">
+                        <input class="form-check-input" type="checkbox" value="" id="checkCookies" runat="server">
                         <label class="form-check-label" for="checkCookies">
                             Faster login: Store your login information in your browser for 12 hours*
                         </label>
@@ -72,7 +57,7 @@
                
               </center></footer>
             </div>
-        </form>
     </div>
-</body>
-</html>
+</asp:Content>
+
+

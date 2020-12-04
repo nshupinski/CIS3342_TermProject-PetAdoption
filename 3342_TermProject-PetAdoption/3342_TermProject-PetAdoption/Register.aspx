@@ -17,7 +17,7 @@
             <nav class="navbar navbar-light bg-light fixed-top navbar-expand-md">
         <div id="navbar" class="navbar-collapse collapse">
             <a class="navbar-brand">
-                APP NAME PENDING?
+                FELIX
             </a>
         </div>
     </nav>
