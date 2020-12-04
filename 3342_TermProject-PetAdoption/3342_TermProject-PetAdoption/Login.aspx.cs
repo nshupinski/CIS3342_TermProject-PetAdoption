@@ -16,8 +16,42 @@ namespace _3342_TermProject_PetAdoption
         {
             if (!IsPostBack)
             {
-                Session.Add("UserType", null);
-                Session.Add("Username", null);
+                HttpCookie reqCookies = Request.Cookies["userInfo"];
+                if(reqCookies != null)
+                {
+                    Session.Add("UserType", reqCookies["UserType"].ToString());
+                    Session.Add("Username", reqCookies["Username"].ToString());
+                    string username = reqCookies["Username"].ToString();
+
+                    WebRequest request = WebRequest.Create("https://localhost:44361/api/Account/GetUserVerified/" + username);
+                    WebResponse response = request.GetResponse();
+
+                    Stream theDataStream = response.GetResponseStream();
+                    StreamReader reader = new StreamReader(theDataStream);
+                    String data = reader.ReadToEnd();
+                    reader.Close();
+                    response.Close();
+
+                    JavaScriptSerializer js = new JavaScriptSerializer();
+                    Boolean verified = js.Deserialize<Boolean>(data);
+
+                    if (verified)
+                    {
+                        Response.Redirect("Home.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("Verification.aspx");
+                    }
+
+
+                }
+                else
+                {
+                    Session.Add("UserType", null);
+                    Session.Add("Username", null);
+                }
+                
             }
         }
 
@@ -56,6 +90,12 @@ namespace _3342_TermProject_PetAdoption
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 Boolean verified = js.Deserialize<Boolean>(data);
 
+                HttpCookie userInfo = new HttpCookie("userInfo");
+                userInfo["Username"] = username;
+                userInfo["UserType"] = userType;
+                userInfo.Expires.Add(new TimeSpan(12, 0, 0));
+                Response.Cookies.Add(userInfo);
+
                 if (verified)
                 {
                     Response.Redirect("Home.aspx");
@@ -82,6 +122,10 @@ namespace _3342_TermProject_PetAdoption
         {
             Session["UserType"] = null;
             Session["UserID"] = null;
+
+            if(Request.Cookies["userInfo"] != null){
+                Response.Cookies["userInfo"].Expires = DateTime.Now.AddDays(-1);
+            }
             Response.Redirect("Login.aspx");
         }
 
