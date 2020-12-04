@@ -6,8 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Script.Serialization;
 using System.Net;
+using System.Net.Mail;
 using System.IO;
 using _3342_TermProject_PetAdoption.Accounts;
+using PetAdoptionLibrary;
 
 namespace _3342_TermProject_PetAdoption
 {
@@ -20,7 +22,7 @@ namespace _3342_TermProject_PetAdoption
 
         protected void btnCreateAccount_Clicked(object sender, EventArgs e)
         {
-            Account newAccount = new Account();
+            Accounts.Account newAccount = new Accounts.Account();
 
             if (!validateUsername(username_input.Text))
             {
@@ -108,7 +110,17 @@ namespace _3342_TermProject_PetAdoption
 
             if (result)
             {
-                Server.Transfer("Login.aspx");
+                Session["UserType"] = newAccount.accountType;
+                Session["Username"] = newAccount.username;
+                Boolean email = generateVerification(username_input.Text, email_input.Text);
+                if (email)
+                {
+                    Server.Transfer("Verification.aspx");
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
@@ -165,6 +177,57 @@ namespace _3342_TermProject_PetAdoption
             Boolean valid = js.Deserialize<Boolean>(data);
 
             return valid;
+        }
+
+        public Boolean generateVerification(string username, string email)
+        {
+
+            char[] chArray = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            string str = string.Empty;
+            Random random = new Random();
+            for (int i = 0; i < 6; i++)
+            {
+                int index = random.Next(1, chArray.Length);
+                if (!str.Contains(chArray.GetValue(index).ToString()))
+                {
+                    str = str + chArray.GetValue(index);
+                }
+                else
+                {
+                    i--;
+                }
+            }
+
+            PetsSOAP.Accounts proxy = new PetsSOAP.Accounts();
+            Boolean result = proxy.generateVerification(username, str);
+
+            Email objEmail = new Email();
+            String strTo = email;
+            String strFROM = "jennmohrbot@gmail.com";
+            String strSubject = "Verification for Pet Application";
+            String strMessage = "Your verification code is " + str + ". Please enter it on the application.";
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.Credentials = new NetworkCredential(strFROM, "lilly676");
+            smtp.Timeout = 20000;
+
+            try
+            {
+                MailMessage message = new MailMessage(strFROM, strTo);
+                message.Subject = strSubject;
+                message.Body = strMessage;
+                smtp.Send(message);
+            }catch(Exception ex)
+            {
+                lblErrors.Text = "The email failed to send.";
+                return false;
+            }
+
+            return true;
         }
     }
 }

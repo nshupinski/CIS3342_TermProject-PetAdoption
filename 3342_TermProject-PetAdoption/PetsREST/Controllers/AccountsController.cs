@@ -76,5 +76,61 @@ namespace PetsREST.Controllers
             return true;
 
         }
+
+        [HttpGet("GetVerificationCode/{username}")]
+        public string GetVerificationCode(string username)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand getCodeCmd = new SqlCommand();
+
+            getCodeCmd.CommandType = CommandType.StoredProcedure;
+            getCodeCmd.CommandText = "TP_GetVerificationCode";
+            getCodeCmd.Parameters.AddWithValue("@username", username);
+
+            DataSet data = objDB.GetDataSetUsingCmdObj(getCodeCmd);
+            string code = data.Tables[0].Rows[0][1].ToString();
+
+            return code;
+        }
+
+        [HttpGet("GetUserVerified/{username}")]
+        public Boolean isUserVerfified(string username)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand isVerifiedCmd = new SqlCommand();
+
+            isVerifiedCmd.CommandType = CommandType.StoredProcedure;
+            isVerifiedCmd.CommandText = "TP_GetVerificationCode";
+            isVerifiedCmd.Parameters.AddWithValue("@username", username);
+
+            DataSet data = objDB.GetDataSetUsingCmdObj(isVerifiedCmd);
+            int value = Int32.Parse(data.Tables[0].Rows[0][2].ToString());
+
+            if (value == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        [HttpGet("GetSecurityAnswer/{username}/{num}")]
+        public String getSecurityAnswer(string username, int num)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand securityCmd = new SqlCommand();
+
+            securityCmd.CommandType = CommandType.StoredProcedure;
+            securityCmd.CommandText = "TP_GetSecurityAnswers";
+            securityCmd.Parameters.AddWithValue("@username", username);
+
+            DataSet data = objDB.GetDataSetUsingCmdObj(securityCmd);
+            string answer = data.Tables[0].Rows[0][num].ToString();
+
+            return answer;
+            
+        }
     }
 }

@@ -11,26 +11,26 @@ namespace _3342_TermProject_PetAdoption
 {
 
 
-    public partial class Login
+    public partial class ForgetPassword
     {
 
         /// <summary>
-        /// loginForm control.
+        /// verification control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm loginForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm verification;
 
         /// <summary>
-        /// btnDeleteCookie control.
+        /// securityDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeleteCookie;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl securityDiv;
 
         /// <summary>
         /// lblErrors control.
@@ -51,13 +51,49 @@ namespace _3342_TermProject_PetAdoption
         protected global::System.Web.UI.WebControls.TextBox username_input;
 
         /// <summary>
-        /// btnForgotPassword control.
+        /// lblsecurityQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnForgotPassword;
+        protected global::System.Web.UI.WebControls.Label lblsecurityQuestion;
+
+        /// <summary>
+        /// security_input control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox security_input;
+
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
+
+        /// <summary>
+        /// passwordDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl passwordDiv;
+
+        /// <summary>
+        /// lblErrorsPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorsPassword;
 
         /// <summary>
         /// password_input control.
@@ -69,39 +105,21 @@ namespace _3342_TermProject_PetAdoption
         protected global::System.Web.UI.WebControls.TextBox password_input;
 
         /// <summary>
-        /// userPet control.
+        /// password2_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton userPet;
+        protected global::System.Web.UI.WebControls.TextBox password2_input;
 
         /// <summary>
-        /// userShelter control.
+        /// btnReset control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton userShelter;
-
-        /// <summary>
-        /// btnSubmit_login control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit_login;
-
-        /// <summary>
-        /// btnSubmit_createAccount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit_createAccount;
+        protected global::System.Web.UI.WebControls.Button btnReset;
     }
 }

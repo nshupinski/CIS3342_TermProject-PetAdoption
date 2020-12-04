@@ -32,23 +32,23 @@
                     <asp:Label ID="lblErrors" runat="server" Text=""></asp:Label>
                   <p><asp:TextBox runat="server" id="username_input" class="form-control" type="text" Placeholder="Username"></asp:TextBox></p>
                   <p>
-                      <asp:Button ID="btnForgotPassword" class="btn btn-light col-md-4" style="float: right" runat="server" type="submit" Text="Forgot Password?"></asp:Button>
+                      <asp:Button ID="btnForgotPassword" class="btn btn-light col-md-4" style="float: right" runat="server" type="submit" Text="Forgot Password?" OnClick="btnForgotPassword_Click"></asp:Button>
                       <asp:TextBox runat="server" id="password_input" class="form-control col-md-7" type="text" Placeholder="Password"></asp:TextBox>
                   </p>
                   
-                   <fieldset class="form-group">
+                   <fieldset class="form-group" runat="server">
                     <div class="row">
                       <p class="col-form-label col-sm-5 pt-0">Account Type</p>
                       <div class="col-sm-5">
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="userType" id="userPet" value="PetAdopter" checked/>
-                          <label class="form-check-label" for="userPet">
+                          <input class="form-check-input" type="radio" name="userType" id="userPet" value="PetAdopter" runat="server" checked/>
+                          <label class="form-check-label" for="userPet" runat="server">
                             Pet Adopter
                           </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="userType" id="userShelter" value="SheltersRescues"/>
-                          <label class="form-check-label" for="userShelter">
+                          <input class="form-check-input" type="radio" name="userType" id="userShelter" value="SheltersRescues" runat="server"/>
+                          <label class="form-check-label" for="userShelter" runat="server">
                             Shelters & Rescues
                           </label>
                         </div>
