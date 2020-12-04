@@ -84,5 +84,10 @@ namespace _3342_TermProject_PetAdoption
             Session["UserID"] = null;
             Response.Redirect("Login.aspx");
         }
+
+        protected void btnForgotPassword_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForgetPassword.aspx");
+        }
     }
 }

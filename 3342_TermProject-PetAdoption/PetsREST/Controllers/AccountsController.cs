@@ -115,5 +115,22 @@ namespace PetsREST.Controllers
                 return false;
             }
         }
+
+        [HttpGet("GetSecurityAnswer/{username}/{num}")]
+        public String getSecurityAnswer(string username, int num)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand securityCmd = new SqlCommand();
+
+            securityCmd.CommandType = CommandType.StoredProcedure;
+            securityCmd.CommandText = "TP_GetSecurityAnswers";
+            securityCmd.Parameters.AddWithValue("@username", username);
+
+            DataSet data = objDB.GetDataSetUsingCmdObj(securityCmd);
+            string answer = data.Tables[0].Rows[0][num].ToString();
+
+            return answer;
+            
+        }
     }
 }

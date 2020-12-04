@@ -133,6 +133,29 @@ namespace PetsSOAP
             }
         }
 
+        [WebMethod]
+        public Boolean changePassword(string username, string password)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand changeCmd = new SqlCommand();
+
+            changeCmd.CommandType = CommandType.StoredProcedure;
+            changeCmd.CommandText = "TP_ResetPassword";
+            changeCmd.Parameters.AddWithValue("@username", username);
+            changeCmd.Parameters.AddWithValue("@password", password);
+
+            int success = objDB.DoUpdateUsingCmdObj(changeCmd);
+
+            if (success > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 
 }
