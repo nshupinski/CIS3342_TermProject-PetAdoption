@@ -6,8 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Script.Serialization;
 using System.Net;
+using System.Net.Mail;
 using System.IO;
 using _3342_TermProject_PetAdoption.Accounts;
+using PetAdoptionLibrary;
 
 namespace _3342_TermProject_PetAdoption
 {
@@ -20,7 +22,7 @@ namespace _3342_TermProject_PetAdoption
 
         protected void btnCreateAccount_Clicked(object sender, EventArgs e)
         {
-            Account newAccount = new Account();
+            Accounts.Account newAccount = new Accounts.Account();
 
             if (!validateUsername(username_input.Text))
             {
@@ -110,8 +112,15 @@ namespace _3342_TermProject_PetAdoption
             {
                 Session["UserType"] = newAccount.accountType;
                 Session["Username"] = newAccount.username;
-                generateVerification(username_input.Text);
-                Server.Transfer("Verification.aspx");
+                Boolean email = generateVerification(username_input.Text, email_input.Text);
+                if (email)
+                {
+                    Server.Transfer("Verification.aspx");
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
@@ -170,7 +179,7 @@ namespace _3342_TermProject_PetAdoption
             return valid;
         }
 
-        public void generateVerification(string username)
+        public Boolean generateVerification(string username, string email)
         {
 
             char[] chArray = "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
@@ -192,7 +201,33 @@ namespace _3342_TermProject_PetAdoption
             PetsSOAP.Accounts proxy = new PetsSOAP.Accounts();
             Boolean result = proxy.generateVerification(username, str);
 
-            //SEND EMAIL
+            Email objEmail = new Email();
+            String strTo = email;
+            String strFROM = "jennmohrbot@gmail.com";
+            String strSubject = "Verification for Pet Application";
+            String strMessage = "Your verification code is " + str + ". Please enter it on the application.";
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.Credentials = new NetworkCredential(strFROM, "lilly676");
+            smtp.Timeout = 20000;
+
+            try
+            {
+                MailMessage message = new MailMessage(strFROM, strTo);
+                message.Subject = strSubject;
+                message.Body = strMessage;
+                smtp.Send(message);
+            }catch(Exception ex)
+            {
+                lblErrors.Text = "The email failed to send.";
+                return false;
+            }
+
+            return true;
         }
     }
 }
