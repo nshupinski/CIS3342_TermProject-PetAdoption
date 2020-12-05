@@ -1,57 +1,13 @@
 ﻿
-function createPetCard(petList) {
+function createPetCard(List<Pet>) {
 
-    var colNum = 1;
-
-    for (var i = 0; i < petList.length; i++) {
-
-        if (colNum > 3) {
-            colNum = 1;
-        }
-
-        var card = document.createElement("div");
-        card.setAttribute("style", "width: 6rem; height: 12em; border-style: solid;");
-
-        var image = document.createElement("img");
-        image.setAttribute("src", "images/bacon.jpg");
-        image.setAttribute("style", "width: 16em; height: 21em;");
-
-        var body = document.createElement("div");
-        body.setAttribute("style", "background-color: lightgrey; width: 16em;");
-
-        var name = document.createElement("h5");
-        name.innerHTML = petList[i].name;
-
-        var animal = document.createElement("p");
-        animal.innerHTML = petList[i].animal;
-
-        var breed = document.createElement("p");
-        breed.innerHTML = petList[i].breed;
-
-        var gwKids = document.createElement("p");
-        gwKids.innerHTML = petList[i].gwKids;
-
-        var gwPets = document.createElement("p");
-        gwPets.innerHTML = petList[i].gwPets;
-
-        var location = document.createElement("p");
-        location.innerHTML = petList[i].location;
-
-        var ageRange = document.createElement("p");
-        ageRange.innerHTML = petList[i].ageRange;
-
-        card.appendChild(image);
-        body.appendChild(name);
-        body.appendChild(animal);
-        body.appendChild(breed);
-        body.appendChild(gwKids);
-        body.appendChild(gwPets);
-        body.appendChild(location);
-        body.appendChild(ageRange);
-        card.appendChild(body);
-        var col2 = document.getElementById("col" + colNum);
-        col2.appendChild(card);
-
-        colNum++;
-    }
+    /* Create a div element dynamically */
+    $("col1").append("<div class='card' style='width: 18rem;'>" +
+        "<img class='card - img - top' src='...' alt='Card image cap'>" + 
+        "<div class='card-body'>" +
+            "<h5 class='card-title'>Card title</h5>" +
+            "<p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>" +
+            "<a href='#; class='btn btn-primary'>Go somewhere</a>" +
+        "</div>" +
+    "</div>");
 }
