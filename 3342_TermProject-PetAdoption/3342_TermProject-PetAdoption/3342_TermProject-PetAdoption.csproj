@@ -71,6 +71,8 @@
     <Content Include="CSS\Register_Stylesheet.css" />
     <Content Include="ForgetPassword.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="images\bacon.jpg" />
+    <Content Include="Javascript\Add_Pets.js" />
     <Content Include="Login.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,7 +125,6 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
-    <Compile Include="Stored_Procedures.cs" />
     <Compile Include="Verification.aspx.cs">
       <DependentUpon>Verification.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -152,9 +153,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PetAdoptionLibrary\PetAdoptionLibrary.csproj">
       <Project>{d6b1e03a-cecd-4ef3-9bce-9e817cf7a279}</Project>

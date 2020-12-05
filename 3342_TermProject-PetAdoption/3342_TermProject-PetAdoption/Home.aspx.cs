@@ -21,7 +21,7 @@ namespace _3342_TermProject_PetAdoption
         {
             if(!(IsPostBack))
             {
-                WebRequest request = WebRequest.Create("https://localhost:44361/api/Pet/GetAllPets");
+                WebRequest request = WebRequest.Create("https://localhost:44361/api/Pet/GetAllPets/");
                 WebResponse response = request.GetResponse();
 
                 Stream theDataStream = response.GetResponseStream();
@@ -33,7 +33,8 @@ namespace _3342_TermProject_PetAdoption
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 List<Pet> petsList = js.Deserialize<List<Pet>>(data);
 
-                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "createPetCard(petsList)", true);
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Script", "createPetCard(" + petsList + ")", true);
+                //createPetCard(petsList);
             }
         }
 
