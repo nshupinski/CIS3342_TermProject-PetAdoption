@@ -33,8 +33,9 @@ namespace _3342_TermProject_PetAdoption
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 List<Pet> petsList = js.Deserialize<List<Pet>>(data);
 
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "Script", "createPetCard(" + petsList + ")", true);
-                //createPetCard(petsList);
+                foreach (Pet pet in petsList) {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Script", "createPetCard('" + pet.name + "', '" + pet.userID + "', '" + pet.animal + "', '" + pet.breed + "', '" + pet.goodWithKids + "', '" + pet.goodWithPets + "', '" + pet.location + "', '" + pet.ageRange + "')", true);
+                }
             }
         }
 
