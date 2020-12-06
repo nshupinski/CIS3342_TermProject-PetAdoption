@@ -12,9 +12,9 @@ namespace _3342_TermProject_PetAdoption
     public partial class ForgetPassword : System.Web.UI.Page
     {
 
-        string question1 = "Security Question: What was your childhood nickname?";
-        string question2 = "Security Question: What was the last name of your third-grade teacher?";
-        string question3 = "Security Question: What is the name of your favorite pet?";
+        string question1 = "<small><b>Security Question:</b> What was your childhood nickname?</small>";
+        string question2 = "<small><b>Security Question:</b> What was the last name of your third-grade teacher?</small>";
+        string question3 = "<small><b>Security Question:</b> What is the name of your favorite pet?</small>";
         Random rnd = new Random();
 
 

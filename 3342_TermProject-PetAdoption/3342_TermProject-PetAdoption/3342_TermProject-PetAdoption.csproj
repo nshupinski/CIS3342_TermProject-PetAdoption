@@ -68,9 +68,11 @@
   <ItemGroup>
     <Content Include="CSS\Home_Stylesheet.css" />
     <Content Include="CSS\Login_Stylesheet.css" />
+    <Content Include="CSS\Profile_Stylesheet.css" />
     <Content Include="CSS\Register_Stylesheet.css" />
     <Content Include="ForgetPassword.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="images\default.png" />
     <Content Include="images\Felix.png" />
     <Content Include="Login.aspx" />
     <None Include="Properties\Settings.settings">

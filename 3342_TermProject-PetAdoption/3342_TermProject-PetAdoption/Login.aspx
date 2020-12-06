@@ -44,11 +44,11 @@
                   
                         <input class="form-check-input" type="checkbox" value="" id="checkCookies" runat="server">
                         <label class="form-check-label" for="checkCookies">
-                            Faster login: Store your login information in your browser for 12 hours*
+                            <small><b>Faster login:</b> Store your login information in your browser for 12 hours*</small>
                         </label>
                   
                   </div>
-                     <p><small>*If you uncheck the box when you login and a cookie already exists, it will delete the cookie from your browser upon next login visit. If you would like to delete a cookie automatically, click on the 'Delete Cookie' button.</small></label>
+                     <p><small>*If you uncheck the box when you login and a cookie already exists, it will delete the cookie from your browser upon next login visit.</small></label>
                   </p>
                 </div>
               <footer class="card-footer"><center>

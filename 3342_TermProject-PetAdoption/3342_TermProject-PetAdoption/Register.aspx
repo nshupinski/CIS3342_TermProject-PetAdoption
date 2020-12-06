@@ -1,27 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="_3342_TermProject_PetAdoption.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="_3342_TermProject_PetAdoption.WebForm1" MasterPageFile="~/Site1.Master"%>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
     <title>Register</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/Register_Stylesheet.css" />
 
-</head>
+</asp:Content>
 
-<body>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="bg">
-        <form id="loginForm" runat="server">
-            <nav class="navbar navbar-light bg-light fixed-top navbar-expand-md">
-        <div id="navbar" class="navbar-collapse collapse">
-            <a class="navbar-brand">
-                FELIX
-            </a>
-        </div>
-    </nav>
             <br />
             <div class="card h-100">
               <header class="card-header">
@@ -126,13 +116,11 @@
                   <label for="secAnswer3"><small><b>Security Question #3</b></small></label>
                   <label class="question"><small>What is the name of your favorite pet?</small></label>
                   <asp:TextBox runat="server" id="secAnswer3" class="form-control col-md-11 input" type="text" Placeholder="Ex: Phil" required></asp:TextBox><br />
-
+                  <center><small><b>Already have an account?</b> Click here to go back to the <a href="Login.aspx">Login</a>.</small></center>
              </div>
                 <footer class="card-footer"><center>
                 <asp:Button ID="btnSubmit_createAccount" class="btn btn-dark" runat="server" type="submit" Text="Create Account" onclick="btnCreateAccount_Clicked"></asp:Button>
               </center></footer>
             </div>
-        </form>
     </div>
-</body>
-</html>
+</asp:Content>
