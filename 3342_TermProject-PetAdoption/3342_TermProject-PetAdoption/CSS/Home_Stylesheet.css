@@ -18,9 +18,10 @@
     letter-spacing: 2px;
 }
 
-img{
-    height:125px;
-    width: auto;
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit:cover;
 }
 
 

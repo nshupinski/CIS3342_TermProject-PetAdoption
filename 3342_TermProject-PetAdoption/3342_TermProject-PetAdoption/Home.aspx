@@ -14,11 +14,11 @@
     </div>
     <br />
     <div class="container">
-    <div class="row row-cols-1 row-cols-md-3">
+    <div class="row">
     <asp:Repeater ID="rptPet" runat="server" OnItemCommand="rptPet_ItemCommand" >
         <ItemTemplate>
-            <div class="col mb-4">
-                <div class="card" style="min-width: 300px;">
+            <div class="col-sm-12 col-lg-3">
+                <div class="card h-100" style="min-width: 300px;">
                      <img src="<%# Eval("imgFile") %>" class="card-img-top" alt="...">
                     <div class="card-body">
                 <table style="margin-left: auto; margin-right: auto;">
@@ -62,6 +62,7 @@
             
         </ItemTemplate>
     </asp:Repeater>
+        <br />
         </div>
         
         </div>

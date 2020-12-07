@@ -28,6 +28,9 @@
           <li class="nav-item">
             <a id="petsLink" runat="server" class="nav-link" href="#" style="line-height:115px;">My Pets</a>
           </li>
+            <li class="nav-item">
+            <a id="addPetLink" runat="server" class="nav-link" href="AddPet.aspx" style="line-height:115px;">Add Pets</a>
+          </li>
         </ul>
     </div>
 
