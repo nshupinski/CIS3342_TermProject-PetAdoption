@@ -20,13 +20,13 @@
     <div id="nav_bg">
         <ul class="nav">
           <li class="nav-item">
-            <a id="nav_title" class="nav-link active" href="#">Site Name</a>
+            <a href="Home.aspx"><img src="images/Felix.png" /></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="padding-top: 22px;">Link</a>
+            <a id="profileLink" runat="server" class="nav-link" href="Profile.aspx" style="line-height:115px">My Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="padding-top: 22px;">Link</a>
+            <a id="petsLink" runat="server" class="nav-link" href="#" style="line-height:115px;">My Pets</a>
           </li>
         </ul>
     </div>

@@ -66,26 +66,38 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddPet.aspx" />
     <Content Include="CSS\Home_Stylesheet.css" />
     <Content Include="CSS\Login_Stylesheet.css" />
-    <Content Include="CSS\PetPage_Stylesheet.css" />
+    <Content Include="CSS\Profile_Stylesheet.css" />
+    <Content Include="CSS\AddPet_Stylesheet.css" />
     <Content Include="CSS\Register_Stylesheet.css" />
     <Content Include="ForgetPassword.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="images\bacon.jpg" />
-    <Content Include="Javascript\Add_Pets.js" />
+    <Content Include="ImageGrab.aspx" />
+    <Content Include="images\adopter.png" />
+    <Content Include="images\default.png" />
+    <Content Include="images\Felix.png" />
+    <Content Include="images\shelter.png" />
     <Content Include="Login.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Web References\Accounts\Accounts.disco" />
-    <Content Include="Pet_Page.aspx" />
+    <Content Include="Profile.aspx" />
     <Content Include="Verification.aspx" />
     <Content Include="Web.config" />
     <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPet.aspx.cs">
+      <DependentUpon>AddPet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPet.aspx.designer.cs">
+      <DependentUpon>AddPet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ForgetPassword.aspx.cs">
       <DependentUpon>ForgetPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -100,6 +112,13 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ImageGrab.aspx.cs">
+      <DependentUpon>ImageGrab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImageGrab.aspx.designer.cs">
+      <DependentUpon>ImageGrab.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,12 +126,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pet_Page.aspx.cs">
-      <DependentUpon>Pet_Page.aspx</DependentUpon>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pet_Page.aspx.designer.cs">
-      <DependentUpon>Pet_Page.aspx</DependentUpon>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

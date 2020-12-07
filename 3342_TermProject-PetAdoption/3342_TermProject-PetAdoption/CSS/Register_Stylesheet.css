@@ -5,11 +5,13 @@
     padding-top: 15em;
     padding-bottom: 15em;
     height: auto;
-    background-color: lightgrey;
+    background-color: ghostwhite;
 }
 
 .card-header {
-    background-color: hsl(171, 100%, 41%);
+    background-color: #40bb62;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 2px;
 }
 
 .card {
@@ -46,10 +48,18 @@ fieldset label{
     margin-left: 0px;
 }
 
-#state_input{
-    height: 45px;
+.ddl{
+    height: 100px;
 }
 
 .question{
     margin-left:20px;
+}
+
+.card {
+    margin-top: -224px;
+}
+
+a {
+    color: #40bb62;
 }

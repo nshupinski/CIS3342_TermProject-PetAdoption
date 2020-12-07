@@ -5,6 +5,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.UI;
@@ -17,7 +18,6 @@ namespace _3342_TermProject_PetAdoption
     {
         DataSet myDS = new DataSet();
         List<Pet> pets = new List<Pet>();
-        List<PetPicture> petPics = new List<PetPicture>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,126 +36,89 @@ namespace _3342_TermProject_PetAdoption
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 List<Pet> petsList = js.Deserialize<List<Pet>>(data);
                 pets = petsList;
+                ListtoDataTableConverter converter = new ListtoDataTableConverter();
+                DataTable dt = converter.ToDataTable(pets);
+                dt.Columns.Add("imgFile");
 
-
-                // Get Pet pictures
-                WebRequest request2 = WebRequest.Create("https://localhost:44361/api/Pet/GetPetPictures/");
-                WebResponse response2 = request2.GetResponse();
-
-                Stream theDataStream2 = response2.GetResponseStream();
-                StreamReader reader2 = new StreamReader(theDataStream2);
-                String data2 = reader2.ReadToEnd();
-                reader2.Close();
-                response2.Close();
-
-                JavaScriptSerializer js2 = new JavaScriptSerializer();
-                List<PetPicture> petPictures = js2.Deserialize<List<PetPicture>>(data2);
-                petPics = petPictures;
-
-
-                byte imageData;
-                //imageData = (byte[])petPics("ImageData", 0);
-
-                buildCards();
-            }
-        }
-
-        protected void buildCards()
-        {
-            if(pets.Count != 0)
-            {
-                int col = 0;
-
-                for (int i = 0; i < pets.Count; i++)
+                foreach(DataRow tempRow in dt.Rows)
                 {
-                    col++;
-
-                    Table table = new Table();
-
-                    TableRow imageRow = new TableRow();
-                    TableCell imageValue = new TableCell();
-                    Image picValue = new Image();
-                    TableRow nameRow = new TableRow();
-                    TableHeaderCell nameValue = new TableHeaderCell();
-                    TableRow contentRow = new TableRow();
-                    TableCell contentValue = new TableCell();
-                    TableRow contentRow2 = new TableRow();
-                    TableCell contentValue2 = new TableCell();
-                    TableRow buttonRow = new TableRow();
-                    TableCell buttonValue = new TableCell();
-
-                    // Assign values
-                    //picValue.
-                    nameValue.Text = pets[i].name;
-                    contentValue.Text = pets[i].breed + " - " + pets[i].ageRange;
-                    contentValue.Text = " - " + pets[i].location;
-
-                    // Create a View Button 
-                    Button viewButton = new Button();
-                    viewButton.Text = "View";
-                    viewButton.CssClass = "viewButton";
-                    viewButton.ID = pets[i].petID.ToString();
-                    viewButton.Width = 120;
-                    viewButton.Click += new EventHandler(this.btnView_Clicked);
-                    buttonValue.Controls.Add(viewButton);
-
-                    // Append all cells to rows and rows to table
-                    //picValue.Controls.Add(picValue);
-
-                    imageRow.Cells.Add(imageValue);
-                    nameRow.Cells.Add(nameValue);
-                    contentRow.Cells.Add(contentValue);
-                    contentRow2.Cells.Add(contentValue2);
-                    buttonRow.Cells.Add(buttonValue);
-
-                    table.Rows.Add(imageRow);
-                    table.Rows.Add(nameRow);
-                    table.Rows.Add(contentRow);
-                    table.Rows.Add(contentRow2);
-                    table.Rows.Add(buttonRow);
-
-                    if (col == 1)
-                    {
-                        col1.Controls.Add(table);
-                    }
-                    else if (col == 2)
-                    {
-                        col2.Controls.Add(table);
-                    }
-                    else if (col == 3)
-                    {
-                        col3.Controls.Add(table);
-                    }
-                    else if (col > 3)
-                    {
-                        col1.Controls.Add(table);
-                        col = 0;
-                    }
+                    tempRow["imgFile"] = "ImageGrab.aspx?ID=" + tempRow["petID"];
                 }
+
+                rptPet.DataSource = dt;
+                rptPet.DataBind();
+
+                
             }
         }
+
 
         protected void btnCompatTest_Clicked(object sender, EventArgs e)
         {
 
         }
 
-        protected void btnView_Clicked(object sender, EventArgs e)
-        {
-            Pet selectedPet = new Pet(); ;
-            Button clickedButton = sender as Button;
-            int id = int.Parse(clickedButton.ID);
 
-            foreach(Pet pet in pets)
+        protected void rptPet_ItemCommand(Object source, RepeaterCommandEventArgs e)
+        {
+            int rowIndex = e.Item.ItemIndex;
+            Label myLabel = (Label)rptPet.Items[rowIndex].FindControl("lblPetID");
+            String pet = myLabel.Text;
+            int petID = Int32.Parse(pet);
+            Session.Add("selectedPet", petID);
+            Response.Redirect("PetPage.aspx");
+        }
+
+        public class ListtoDataTableConverter
+
+        {
+
+            public DataTable ToDataTable<T>(List<T> items)
+
             {
-                if(pet.petID == id)
+
+                DataTable dataTable = new DataTable(typeof(T).Name);
+
+                //Get all the properties
+
+                PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+                foreach (PropertyInfo prop in Props)
+
                 {
-                    selectedPet = pet;
+
+                    //Setting column names as Property names
+
+                    dataTable.Columns.Add(prop.Name);
+
                 }
+
+                foreach (T item in items)
+
+                {
+
+                    var values = new object[Props.Length];
+
+                    for (int i = 0; i < Props.Length; i++)
+
+                    {
+
+                        //inserting property values to datatable rows
+
+                        values[i] = Props[i].GetValue(item, null);
+
+                    }
+
+                    dataTable.Rows.Add(values);
+
+                }
+
+                //put a breakpoint here and check datatable
+
+                return dataTable;
+
             }
 
-            Session.Add("selectedPet", selectedPet);
-            Response.Redirect("Pet_Page.aspx");
         }
     }
 }

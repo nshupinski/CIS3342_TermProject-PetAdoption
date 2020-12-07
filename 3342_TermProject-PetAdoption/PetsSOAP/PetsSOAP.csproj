@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Accounts.asmx" />
+    <Content Include="Pets.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +78,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Connection.cs" />
+    <Compile Include="Pet.cs" />
+    <Compile Include="Pets.asmx.cs">
+      <DependentUpon>Pets.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
