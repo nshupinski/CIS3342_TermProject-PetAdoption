@@ -28,5 +28,31 @@
 
 
 .petCard {
+    width: 60%;
+    margin: auto;
+    background-color: lightgrey;
+    margin-bottom: 3em;
+}
+th {
+    text-align: center;
+}
+tbody {
+    text-align: center;
+}
+tr {
+    margin-bottom: 2em;
+}
 
+#petName {
+    text-align: center;
+    color: #3AAFA9;
+}
+#image {
+    margin-bottom: 15px;
+}
+
+
+#btnView {
+    margin-left: auto;
+    margin-right: auto;
 }

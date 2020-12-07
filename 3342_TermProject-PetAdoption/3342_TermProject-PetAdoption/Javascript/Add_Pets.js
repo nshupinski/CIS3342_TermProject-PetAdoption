@@ -1,7 +1,7 @@
 ﻿
 var colNum = 1;
 
-function createPetCard(name, userID, animal, breed, gwKids, gwPets, location, age) {
+function createPetCard(name, petID, shelterUser, animal, breed, gwKids, gwPets, location, age) {
 
     if (colNum > 3) {
         colNum = 1;
@@ -41,10 +41,17 @@ function createPetCard(name, userID, animal, breed, gwKids, gwPets, location, ag
     ageRange_display.setAttribute("style", "margin-bottom: 0;");
     ageRange_display.innerHTML = "Age-Range: " + age;
 
-    var likeSec = document.createElement("div");
-    likeSec.setAttribute("style", "border-style: solid; width: 16em; height: 3em; background-color: white;");
+    var btnView = document.createElement("a");
+    btnView.setAttribute("id", "pet_" + petID);
+    btnView.setAttribute("runat", "server");
+    btnView.setAttribute("style", "color: black; margin-left: auto; margin-right: auto; margin-top: 1em; border-style: solid; padding: 3px;");
+    btnView.setAttribute("onclick", "btnView_Clicked(" + petID + ")");
 
-    var level = document.createElement("a");
+    var buttonText = document.createTextNode("View");
+    btnView.appendChild(buttonText);
+
+    // Bulma heart attempt
+    /*var level = document.createElement("a");
     level.setAttribute("class", "level-item");
     level.setAttribute("aria-label", "like");
 
@@ -53,8 +60,10 @@ function createPetCard(name, userID, animal, breed, gwKids, gwPets, location, ag
 
     var fas = document.createElement("i");
     fas.setAttribute("class", "fas fa-heart");
-    fas.setAttribute("aria-hidden", "true");
+    fas.setAttribute("aria-hidden", "true");*/
 
+
+    // Bootstrap heart attempt
     /*var heart = document.createElement("svg");
     heart.setAttribute("width", "1em");
     heart.setAttribute("height", "1em");
@@ -78,17 +87,18 @@ function createPetCard(name, userID, animal, breed, gwKids, gwPets, location, ag
     body.appendChild(location_display);
     body.appendChild(ageRange_display);
 
-    icon.appendChild(fas);
-    level.appendChild(icon);
-    likeSec.appendChild(level);
+    //icon.appendChild(fas);
+    //level.appendChild(icon);
+    //likeSec.appendChild(level);
+
     //heart.appendChild(path);
     //likeSec.appendChild(heart);
 
-    body.appendChild(likeSec);
+    body.appendChild(btnView);
     card.appendChild(body);
 
     var col = document.getElementById("col" + colNum);
-    col.appendChild(card);
+    //col.appendChild(card);
 
     colNum++;
 }
