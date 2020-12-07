@@ -13,34 +13,31 @@
         <asp:Button ID="btnCompatTest" class="btn btn-light" runat="server" Text="Compatibility Test" OnClick="btnCompatTest_Clicked" />
     </div>
 
-
+    <!--
     <asp:DataList ID="DataList1" runat="server" RepeatColumns="3" style="width: 70%; margin: auto; margin-top: 3em;">
         <ItemTemplate>
-            <div class="petCard">
+            <div id="petCard" class="petCard" runat="server">
                 <table style="margin-left: auto; margin-right: auto;">
                     <tr><img id="image" src="images/bacon.jpg"/></tr>
                     <tr><th id="petName"><%#Eval("name") %></th></tr>
                     <tr><td><%#Eval("breed") %> - <%#Eval("ageRange") %></td></tr>
                     <tr><td> - <%#Eval("location") %></td></tr>
                 </table>
-                <asp:Button ID="btnView_" + <%#Eval("petID") %> runat="server" Text="View" style="margin-top: 20px; margin-bottom: 10px;" OnClick="btnView_Clicked"/>
             </div>
         </ItemTemplate>
     </asp:DataList>
-
+    -->
 
     <div class="container">
       <div class="row">
-        <div id="col1" class="col-sm">
+        <div id="col1" class="col-sm" runat="server">
           
         </div>
-        <div id="col2" class="col-sm">
+        <div id="col2" class="col-sm" runat="server">
             
         </div>
-        <div id="col3" class="col-sm">
-          <a class="level-item" aria-label="like">
-            
-          </a>
+        <div id="col3" class="col-sm" runat="server">
+
         </div>
       </div>
     </div>

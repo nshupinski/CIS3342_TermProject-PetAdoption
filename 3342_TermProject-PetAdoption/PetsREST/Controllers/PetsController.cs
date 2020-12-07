@@ -42,5 +42,32 @@ namespace PetsREST.Controllers
             }
             return pets;
         }
+
+        [HttpGet("GetPetPictures")]
+        public List<PetPicture> GetPetPictures()
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand getPetsCmd = new SqlCommand();
+
+            getPetsCmd.CommandType = CommandType.StoredProcedure;
+            getPetsCmd.CommandText = "TP_GetPetPictures";
+
+            DataSet ds = objDB.GetDataSetUsingCmdObj(getPetsCmd);
+
+            List<PetPicture> pictures = new List<PetPicture>();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                PetPicture newPetPicture = new PetPicture();
+                newPetPicture.petID = int.Parse(row["petID"].ToString());
+                newPetPicture.ImageData = row["ImageData"].ToString();
+                newPetPicture.ImageType = row["ImageType"].ToString();
+                newPetPicture.ImageLength = int.Parse(row["ImageLength"].ToString());
+                newPetPicture.ImageTitle = row["ImageTitle"].ToString();
+
+                pictures.Add(newPetPicture);
+            }
+            return pictures;
+        }
+
     }
 }
