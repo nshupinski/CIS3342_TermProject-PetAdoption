@@ -40,7 +40,9 @@ namespace PetsSOAP
                 addPetCmd.Parameters.AddWithValue("@location", newPet.location);
                 addPetCmd.Parameters.AddWithValue("@ageRange", newPet.ageRange);
 
-                int petID = objDB.DoUpdateUsingCmdObj(addPetCmd);
+                DataSet data = objDB.GetDataSetUsingCmdObj(addPetCmd);
+
+                int petID = Int32.Parse(data.Tables[0].Rows[0][0].ToString());
 
                 if (petID < 0)
                 {

@@ -24,7 +24,15 @@ namespace _3342_TermProject_PetAdoption
             PetsSOAP.Pet newPet = new PetsSOAP.Pet();
             newPet.name = name_input.Text;
             newPet.shelterUser = username;
-            newPet.animal = ddlAnimal.SelectedValue;
+            if(ddlAnimal.SelectedItem.Value == "")
+            {
+                lblErrors.Text = "Please select an animal type.";
+            }
+            else
+            {
+                newPet.animal = ddlAnimal.SelectedItem.Value;
+            }
+
             newPet.breed = breed_input.Text;
             if (checkGoodWithKids.Checked)
             {
