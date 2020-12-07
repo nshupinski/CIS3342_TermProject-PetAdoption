@@ -16,6 +16,7 @@ namespace _3342_TermProject_PetAdoption
     public partial class Home : System.Web.UI.Page
     {
         DataSet myDS = new DataSet();
+        List<Pet> pets = new List<Pet>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,16 +33,34 @@ namespace _3342_TermProject_PetAdoption
 
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 List<Pet> petsList = js.Deserialize<List<Pet>>(data);
+                pets = petsList;
 
-                foreach (Pet pet in petsList) {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Script", "createPetCard('" + pet.name + "', '" + pet.userID + "', '" + pet.animal + "', '" + pet.breed + "', '" + pet.goodWithKids + "', '" + pet.goodWithPets + "', '" + pet.location + "', '" + pet.ageRange + "')", true);
-                }
+                DataList1.DataSource = pets;
+                DataList1.DataBind();
+                /*foreach (Pet pet in petsList) {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Script", "createPetCard('" + pet.name + "', '" + pet.petID + "', '" + pet.shelterUser + "', '" + pet.animal + "', '" + pet.breed + "', '" + pet.goodWithKids + "', '" + pet.goodWithPets + "', '" + pet.location + "', '" + pet.ageRange + "')", true);
+                }*/
             }
         }
 
         protected void btnCompatTest_Clicked(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnView_Clicked(object sender, EventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            clickedButton.ID = clickedButton.ID.Replace("btnView_", "");
+
+            for (int i = 0; i < pets.Count; i++)
+            {
+                /*if(pets[i].petID == clickedButton.ID)
+                {
+                    Session.Add("selectedPet", pets[i]);
+                    Response.Redirect("Pet_Page.aspx");
+                }*/
+            }
         }
     }
 }

@@ -8,8 +8,9 @@ namespace PetAdoptionLibrary
 {
     public class Pet
     {
+        public int petID { get; set; }
         public string name { get; set; }
-        public string userID { get; set; }
+        public string shelterUser { get; set; }
         public string animal { get; set; }
         public string breed { get; set; }
         public int goodWithKids { get; set; }
@@ -21,10 +22,11 @@ namespace PetAdoptionLibrary
         {
         }
 
-        public Pet(string name, string userID, string animal, string breed, int goodWithKids, int goodWithPets, string location, string ageRange)
+        public Pet(string name, int petID, string shelterUser, string animal, string breed, int goodWithKids, int goodWithPets, string location, string ageRange)
         {
             this.name = name;
-            this.userID = userID;
+            this.petID = petID;
+            this.shelterUser = shelterUser;
             this.animal = animal;
             this.breed = breed;
             this.goodWithKids = goodWithKids;
