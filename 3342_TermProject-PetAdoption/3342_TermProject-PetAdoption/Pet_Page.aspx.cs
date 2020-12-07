@@ -12,14 +12,19 @@ namespace _3342_TermProject_PetAdoption
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Pet selectedPet = (Pet)Session["selectedPet"];
+            /*Pet selectedPet = (Pet)Session["selectedPet"];
 
             txtAnimal.Text = selectedPet.animal.ToString();
             txtBreed.Text = selectedPet.breed.ToString();
             txtGWKids.Text = selectedPet.goodWithKids.ToString();
             txtGWPets.Text = selectedPet.goodWithPets.ToString();
             txtLocation.Text = selectedPet.location.ToString();
-            txtAge.Text = selectedPet.ageRange.ToString();
+            txtAge.Text = selectedPet.ageRange.ToString();*/
+        }
+
+        protected void btnLove_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

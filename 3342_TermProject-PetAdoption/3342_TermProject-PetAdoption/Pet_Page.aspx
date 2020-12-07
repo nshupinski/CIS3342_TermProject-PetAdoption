@@ -4,6 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <div id="buttons">
+        <asp:Button ID="btnLove" Text="Love" runat="server" OnClick="btnLove_Clicked"/>
+        <asp:Button ID="btnAdopt" Text="Request Adoption" runat="server" style="margin-left: 2em;"/>
+    </div>
+
     <div id="container">
         <div id="picture">
 

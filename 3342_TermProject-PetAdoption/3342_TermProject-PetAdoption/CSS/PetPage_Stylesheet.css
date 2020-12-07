@@ -1,4 +1,14 @@
 ﻿body {
 }
 
+#container {
+    text-align: center;
+    margin-top: 3em;
+    border-style: solid;
+}
 
+#buttons {
+    text-align: center;
+    margin-top: 2em;
+}
+    

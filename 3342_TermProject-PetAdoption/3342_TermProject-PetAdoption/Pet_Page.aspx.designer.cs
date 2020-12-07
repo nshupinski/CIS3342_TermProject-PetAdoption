@@ -13,6 +13,24 @@ namespace _3342_TermProject_PetAdoption {
     public partial class Pet_Page {
         
         /// <summary>
+        /// btnLove control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLove;
+        
+        /// <summary>
+        /// btnAdopt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAdopt;
+        
+        /// <summary>
         /// name control.
         /// </summary>
         /// <remarks>

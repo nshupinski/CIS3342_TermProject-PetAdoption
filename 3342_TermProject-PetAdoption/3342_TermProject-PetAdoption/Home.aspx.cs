@@ -37,24 +37,26 @@ namespace _3342_TermProject_PetAdoption
                 List<Pet> petsList = js.Deserialize<List<Pet>>(data);
                 pets = petsList;
 
-                DataList1.DataSource = pets;
-                DataList1.DataBind();
-
-                buildCards();
 
                 // Get Pet pictures
-                WebRequest request2 = WebRequest.Create("https://localhost:44361/api/Pet/GetAllPets/");
+                WebRequest request2 = WebRequest.Create("https://localhost:44361/api/Pet/GetPetPictures/");
                 WebResponse response2 = request2.GetResponse();
 
                 Stream theDataStream2 = response2.GetResponseStream();
-                StreamReader reader2 = new StreamReader(theDataStream);
+                StreamReader reader2 = new StreamReader(theDataStream2);
                 String data2 = reader2.ReadToEnd();
                 reader2.Close();
                 response2.Close();
 
                 JavaScriptSerializer js2 = new JavaScriptSerializer();
-                List<PetPicture> petPictures = js2.Deserialize<List<PetPicture>>(data);
+                List<PetPicture> petPictures = js2.Deserialize<List<PetPicture>>(data2);
                 petPics = petPictures;
+
+
+                byte imageData;
+                //imageData = (byte[])petPics("ImageData", 0);
+
+                buildCards();
             }
         }
 
@@ -83,7 +85,7 @@ namespace _3342_TermProject_PetAdoption
                     TableCell buttonValue = new TableCell();
 
                     // Assign values
-
+                    //picValue.
                     nameValue.Text = pets[i].name;
                     contentValue.Text = pets[i].breed + " - " + pets[i].ageRange;
                     contentValue.Text = " - " + pets[i].location;
