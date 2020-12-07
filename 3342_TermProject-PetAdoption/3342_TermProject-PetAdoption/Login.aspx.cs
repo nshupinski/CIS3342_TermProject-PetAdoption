@@ -14,6 +14,12 @@ namespace _3342_TermProject_PetAdoption
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            var profile = Page.Master.FindControl("profileLink");
+            profile.Visible = false;
+            var pets = Page.Master.FindControl("petsLink");
+            pets.Visible = false;
+
             if (!IsPostBack)
             {
                 HttpCookie reqCookies = Request.Cookies["userInfo"];

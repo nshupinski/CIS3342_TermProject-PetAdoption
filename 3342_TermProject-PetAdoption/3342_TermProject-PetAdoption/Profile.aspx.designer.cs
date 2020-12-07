@@ -15,6 +15,15 @@ namespace _3342_TermProject_PetAdoption
     {
 
         /// <summary>
+        /// profileimg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage profileimg;
+
+        /// <summary>
         /// lblUsername control.
         /// </summary>
         /// <remarks>
@@ -58,5 +67,41 @@ namespace _3342_TermProject_PetAdoption
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLocation;
+
+        /// <summary>
+        /// lblPetGV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPetGV;
+
+        /// <summary>
+        /// gvShelter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvShelter;
+
+        /// <summary>
+        /// gvAdopter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvAdopter;
+
+        /// <summary>
+        /// lblGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGridView;
     }
 }

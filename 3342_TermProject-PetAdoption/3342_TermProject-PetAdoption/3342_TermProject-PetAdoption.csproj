@@ -72,8 +72,10 @@
     <Content Include="CSS\Register_Stylesheet.css" />
     <Content Include="ForgetPassword.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="images\adopter.png" />
     <Content Include="images\default.png" />
     <Content Include="images\Felix.png" />
+    <Content Include="images\shelter.png" />
     <Content Include="Login.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

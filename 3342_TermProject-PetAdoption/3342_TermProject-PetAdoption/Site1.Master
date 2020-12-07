@@ -23,10 +23,10 @@
             <a href="Home.aspx"><img src="images/Felix.png" /></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Profile.aspx" style="line-height:115px">My Profile</a>
+            <a id="profileLink" runat="server" class="nav-link" href="Profile.aspx" style="line-height:115px">My Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" style="line-height:115px;">My Pets</a>
+            <a id="petsLink" runat="server" class="nav-link" href="#" style="line-height:115px;">My Pets</a>
           </li>
         </ul>
     </div>

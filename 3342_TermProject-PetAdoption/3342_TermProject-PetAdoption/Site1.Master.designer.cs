@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _3342_TermProject_PetAdoption {
-    
-    
-    public partial class Site1 {
-        
+namespace _3342_TermProject_PetAdoption
+{
+
+
+    public partial class Site1
+    {
+
         /// <summary>
         /// head control.
         /// </summary>
@@ -20,7 +22,25 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
+
+        /// <summary>
+        /// profileLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor profileLink;
+
+        /// <summary>
+        /// petsLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor petsLink;
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -29,7 +49,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>

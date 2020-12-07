@@ -101,7 +101,7 @@ namespace _3342_TermProject_PetAdoption.Accounts {
                 this.AddAccountCompleted(this, new AddAccountCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
-        
+
         /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);

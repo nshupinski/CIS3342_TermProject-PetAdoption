@@ -29,7 +29,7 @@ namespace PetsREST.Controllers
             {
                 Pet newPet = new Pet();
                 newPet.name = row["name"].ToString();
-                newPet.userID = row["userID"].ToString();
+                newPet.userID = row["shelterID"].ToString();
                 newPet.animal = row["animal"].ToString();
                 newPet.breed = row["breed"].ToString();
                 newPet.goodWithKids = int.Parse(row["goodWithKids"].ToString());
