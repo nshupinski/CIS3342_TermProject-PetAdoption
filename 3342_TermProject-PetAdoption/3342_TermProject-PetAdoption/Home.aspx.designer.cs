@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _3342_TermProject_PetAdoption {
-    
-    
-    public partial class Home {
-        
+namespace _3342_TermProject_PetAdoption
+{
+
+
+    public partial class Home
+    {
+
         /// <summary>
         /// btnCompatTest control.
         /// </summary>
@@ -20,16 +22,16 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCompatTest;
-        
+
         /// <summary>
-        /// DataList1 control.
+        /// rptPet control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataList1;
-        
+        protected global::System.Web.UI.WebControls.Repeater rptPet;
+
         /// <summary>
         /// col1 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl col1;
-        
+
         /// <summary>
         /// col2 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace _3342_TermProject_PetAdoption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl col2;
-        
+
         /// <summary>
         /// col3 control.
         /// </summary>

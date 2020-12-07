@@ -74,6 +74,7 @@
     <Content Include="CSS\Register_Stylesheet.css" />
     <Content Include="ForgetPassword.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="ImageGrab.aspx" />
     <Content Include="images\adopter.png" />
     <Content Include="images\default.png" />
     <Content Include="images\Felix.png" />
@@ -110,6 +111,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImageGrab.aspx.cs">
+      <DependentUpon>ImageGrab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImageGrab.aspx.designer.cs">
+      <DependentUpon>ImageGrab.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
