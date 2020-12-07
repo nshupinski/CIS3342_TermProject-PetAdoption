@@ -33,13 +33,13 @@ namespace _3342_TermProject_PetAdoption
         protected global::System.Web.UI.WebControls.TextBox name_input;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// ddlAnimal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAnimal;
 
         /// <summary>
         /// breed_input control.
@@ -78,12 +78,39 @@ namespace _3342_TermProject_PetAdoption
         protected global::System.Web.UI.WebControls.DropDownList state_input;
 
         /// <summary>
-        /// btnSubmit_createAccount control.
+        /// photo_upload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit_createAccount;
+        protected global::System.Web.UI.WebControls.FileUpload photo_upload;
+
+        /// <summary>
+        /// checkGoodWithKids control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkGoodWithKids;
+
+        /// <summary>
+        /// checkGoodWithPets control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkGoodWithPets;
+
+        /// <summary>
+        /// btnSubmit_addPet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit_addPet;
     }
 }

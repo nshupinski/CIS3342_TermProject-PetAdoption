@@ -13,10 +13,10 @@
               </header>
               <div class="card-body">
                     <asp:Label ID="lblErrors" runat="server" Text=""></asp:Label>
-                  <label for="email_input"><small><b>Pet Name</b></small></label>
+                  <label for="name_input"><small><b>Pet Name</b></small></label>
                   <asp:TextBox runat="server" id="name_input" class="form-control col-md-11 input" type="text" Placeholder="Pet Name" required></asp:TextBox><br />
                   <label for="animal_input"><small><b>Animal</b></small></label>
-                      <asp:DropDownList id="DropDownList1" class="form-control col-md-11 input" runat="server">
+                      <asp:DropDownList id="ddlAnimal" class="form-control col-md-11 input" runat="server">
                               <asp:ListItem value="" selected="selected">Select an Animal Type</asp:ListItem>
                               <asp:ListItem value="Cat">Cat</asp:ListItem>
                               <asp:ListItem value="Dog">Dog</asp:ListItem>
@@ -92,7 +92,21 @@
                               <asp:ListItem value="WY">Wyoming</asp:ListItem>
                       </asp:DropDownList>
                       <br />
+                  <label for="photo_upload"><small><b>Pet Image</b></small></label><br />
+                  <asp:FileUpload runat="server" ID="photo_upload" class="form-control-file" /> 
+                  <div class="form-check" runat="server">
+                      <input class="form-check-input" type="checkbox" value="GoodWithKids" id="checkGoodWithKids" runat="server">
+                      <label class="form-check-label" for="checkGoodWithKids" runat="server">
+                        This pet is good with kids.
+                      </label>
+                  </div>
+                  <div class="form-check" runat="server">
+                      <input class="form-check-input" type="checkbox" value="GoodWithPets" id="checkGoodWithPets" runat="server">
+                      <label class="form-check-label" for="checkGoodWithPets" runat="server">
+                        This pet is good with other pets.
+                      </label>
+                  </div>
              </div>
                 <footer class="card-footer"><center>
-                <asp:Button ID="btnSubmit_createAccount" class="btn btn-dark" runat="server" type="submit" Text="Add Pet"></asp:Button>
+                <asp:Button ID="btnSubmit_addPet" class="btn btn-dark" runat="server" type="submit" Text="Add Pet" OnClick="btnSubmit_addPet_Click"></asp:Button>
 </asp:Content>
