@@ -62,7 +62,7 @@ tr {
 }
 
 
-#btnView {
+.viewButton {
     margin-left: auto;
     margin-right: auto;
 }
