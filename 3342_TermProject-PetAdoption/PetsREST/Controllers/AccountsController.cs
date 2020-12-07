@@ -132,5 +132,30 @@ namespace PetsREST.Controllers
             return answer;
             
         }
+
+        [HttpGet("GetUser/{username}")]
+        public Account GetUser(string username)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand getUserCmd = new SqlCommand();
+
+            getUserCmd.CommandType = CommandType.StoredProcedure;
+            getUserCmd.CommandText = "TP_GetUserByUsername";
+
+            getUserCmd.Parameters.AddWithValue("@username", username);
+
+            DataSet data = objDB.GetDataSetUsingCmdObj(getUserCmd);
+
+            Account gotAccount = new Account();
+            gotAccount.username = data.Tables[0].Rows[0][1].ToString();
+            gotAccount.email = data.Tables[0].Rows[0][2].ToString();
+            gotAccount.accountType = data.Tables[0].Rows[0][3].ToString();
+            gotAccount.password = data.Tables[0].Rows[0][4].ToString();
+            gotAccount.phoneNum = data.Tables[0].Rows[0][5].ToString();
+            gotAccount.city = data.Tables[0].Rows[0][6].ToString();
+            gotAccount.state = data.Tables[0].Rows[0][7].ToString();
+
+            return gotAccount;
+        }
     }
 }

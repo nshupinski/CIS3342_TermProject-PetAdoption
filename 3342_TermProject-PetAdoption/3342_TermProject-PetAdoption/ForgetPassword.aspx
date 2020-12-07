@@ -1,26 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgetPassword.aspx.cs" Inherits="_3342_TermProject_PetAdoption.ForgetPassword" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgetPassword.aspx.cs" Inherits="_3342_TermProject_PetAdoption.ForgetPassword" MasterPageFile="~/Site1.Master"%>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Reset Password</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/Login_Stylesheet.css" />
-
-</head>
-<body>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bg">
-        <form id="verification" runat="server">
-            <nav class="navbar navbar-light bg-light fixed-top navbar-expand-md">
-                <div id="navbar" class="navbar-collapse collapse">
-                    <a class="navbar-brand">
-                        APP NAME PENDING?
-                    </a>
-                </div>
-            </nav>
-            <br />
             <div class="card" id ="securityDiv" runat="server">
               <header class="card-header">
                   Security Questions
@@ -57,7 +43,5 @@
                
               </center></footer>
             </div>
-        </form>
     </div>
-</body>
-</html>
+</asp:Content>

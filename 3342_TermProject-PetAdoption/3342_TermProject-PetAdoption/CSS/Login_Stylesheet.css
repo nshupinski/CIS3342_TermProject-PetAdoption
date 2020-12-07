@@ -1,16 +1,21 @@
-﻿body {
+﻿
+
+.card {
+    margin-top: -200px;
 }
 
 .bg {
     padding-left: 35%;
     padding-right: 35%;
     padding-top: 15em;
-    background-color: lightgrey;
+    background-color: ghostwhite;
     height: 1000px;
 }
 
 .card-header {
-    background-color: hsl(171, 100%, 41%);
+    background-color: #40bb62;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 2px;
 }
 
 #lblErrors {
@@ -22,3 +27,9 @@ fieldset{
     margin-left: 40px;
 }
 
+#cookies{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-top: 5px;
+}

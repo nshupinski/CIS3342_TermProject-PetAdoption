@@ -3,10 +3,10 @@
 
 #nav_bg {
     min-height: 120px;
-    background-color: #3AAFA9;
+    background-color: #40bb62;
 }
 .nav {
-    padding-top: 23px;
+    padding-top: 5px;
 }
 #nav_title {
     font-size: xx-large;
@@ -14,17 +14,27 @@
 }
 .nav-link {
     font-family: 'Fredoka One', cursive;
+    color: #070f2d;
+    letter-spacing: 2px;
+}
+
+img{
+    height:125px;
+    width: auto;
 }
 
 
 #compatSection {
     width: 100%;
-    background-color: blueviolet;
+    background-color: #070f2d;
     text-align: center;
 }
-    #ContentPlaceHolder1_btnCompatTest {
-        margin: 10px;
-    }
+#ContentPlaceHolder1_btnCompatTest {
+    margin: 10px;
+    width: 250px;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 2px;
+}
 
 
 .petCard {
@@ -55,4 +65,8 @@ tr {
 .viewButton {
     margin-left: auto;
     margin-right: auto;
+}
+
+.container{
+    width: 80%;
 }

@@ -1,0 +1,75 @@
+﻿
+.bg {
+    padding-left: 35%;
+    padding-right: 35%;
+    padding-top: 15em;
+    padding-bottom: 15em;
+    height: auto;
+    background-color: ghostwhite;
+}
+
+.card-header {
+    background-color: #40bb62;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 2px;
+}
+
+.card {
+    margin-top: -170px;
+}
+
+#lblErrors {
+    color: red;
+}
+
+fieldset {
+    padding: 10px;
+    margin-left: 40px;
+}
+
+p{
+    margin-left: -20px;
+    padding:10px;
+}
+
+.input{
+    margin-left: 20px;
+    padding:10px;
+}
+footer{
+    margin-top: 20px;
+}
+
+label{
+    margin-left:21px;
+}
+
+fieldset label{
+    margin-left: 0px;
+}
+
+.ddl{
+    height: 100px;
+}
+
+.question{
+    margin-left:20px;
+}
+
+.card {
+    margin-top: -224px;
+}
+
+a {
+    color: #40bb62;
+}
+
+.form-check{
+    margin-left: 50px;
+    padding: 10px;
+}
+
+.form-control-file {
+    margin-left: 23px;
+    margin-bottom: 20px;
+}

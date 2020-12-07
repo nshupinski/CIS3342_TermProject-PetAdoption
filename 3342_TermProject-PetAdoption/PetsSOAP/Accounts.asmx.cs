@@ -156,6 +156,34 @@ namespace PetsSOAP
             }
         }
 
+        [WebMethod]
+        public void updateStatus(string username, int petID, string status)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand updateCmd = new SqlCommand();
+
+            updateCmd.CommandType = CommandType.StoredProcedure;
+            updateCmd.CommandText = "TP_UpdateStatus";
+            updateCmd.Parameters.AddWithValue("@status", status);
+            updateCmd.Parameters.AddWithValue("@userID", username);
+            updateCmd.Parameters.AddWithValue("@petID", petID);
+            objDB.DoUpdateUsingCmdObj(updateCmd);
+
+        }
+
+        [WebMethod]
+        public void deleteRequest(string username, int petID)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand updateCmd = new SqlCommand();
+
+            updateCmd.CommandType = CommandType.StoredProcedure;
+            updateCmd.CommandText = "TP_DeleteRequest";
+            updateCmd.Parameters.AddWithValue("@username", username);
+            updateCmd.Parameters.AddWithValue("@petID", petID);
+            objDB.DoUpdateUsingCmdObj(updateCmd);
+
+        }
     }
 
 }
