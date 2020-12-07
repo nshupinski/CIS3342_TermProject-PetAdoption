@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddPet.aspx" />
     <Content Include="CSS\Home_Stylesheet.css" />
     <Content Include="CSS\Login_Stylesheet.css" />
     <Content Include="CSS\Profile_Stylesheet.css" />
@@ -88,6 +89,13 @@
     <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPet.aspx.cs">
+      <DependentUpon>AddPet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPet.aspx.designer.cs">
+      <DependentUpon>AddPet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ForgetPassword.aspx.cs">
       <DependentUpon>ForgetPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
