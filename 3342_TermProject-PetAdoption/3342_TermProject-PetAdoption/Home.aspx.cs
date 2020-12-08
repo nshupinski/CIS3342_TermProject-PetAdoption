@@ -27,6 +27,9 @@ namespace _3342_TermProject_PetAdoption
             {
                 var AddPets = Page.Master.FindControl("addPetLink");
                 AddPets.Visible = false;
+            }else if(userType == null)
+            {
+                Response.Redirect("Login.aspx");
             }
 
             if (!(IsPostBack))
@@ -63,7 +66,7 @@ namespace _3342_TermProject_PetAdoption
 
         protected void btnCompatTest_Clicked(object sender, EventArgs e)
         {
-
+            Response.Redirect("Compatibility.aspx");
         }
 
 

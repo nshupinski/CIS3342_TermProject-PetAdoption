@@ -17,6 +17,10 @@ namespace _3342_TermProject_PetAdoption
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (userType == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             int petID = int.Parse(Session["selectedPet"].ToString());
 
             // Get Selected Pet

@@ -12,7 +12,12 @@ namespace _3342_TermProject_PetAdoption
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string userType = Session["UserType"].ToString();
 
+            if (userType == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
 
         protected void btnFindMatch_Click(object sender, EventArgs e)
@@ -36,8 +41,11 @@ namespace _3342_TermProject_PetAdoption
                 search.goodWithPets = 1;
             }
 
-            PetsSOAP.Pet proxy = new PetsSOAP.Pet();
-            int petID = proxy.(newAccount);
+            PetsSOAP.Pets proxy = new PetsSOAP.Pets();
+            int petID = proxy.getMatch(search);
+
+            Session.Add("selectedPet", petID);
+            Response.Redirect("Pet_Page.aspx");
 
         }
     }

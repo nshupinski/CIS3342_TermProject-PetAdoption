@@ -24,6 +24,15 @@ namespace _3342_TermProject_PetAdoption
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
+        /// form2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+
+        /// <summary>
         /// profileLink control.
         /// </summary>
         /// <remarks>
@@ -51,13 +60,13 @@ namespace _3342_TermProject_PetAdoption
         protected global::System.Web.UI.HtmlControls.HtmlAnchor addPetLink;
 
         /// <summary>
-        /// form1 control.
+        /// btnLogOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button btnLogOut;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

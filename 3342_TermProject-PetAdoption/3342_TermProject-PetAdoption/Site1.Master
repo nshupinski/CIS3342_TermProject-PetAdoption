@@ -16,7 +16,7 @@
 
 </head>
 <body>
-
+    <form id="form2" runat="server">
     <div id="nav_bg">
         <ul class="nav">
           <li class="nav-item">
@@ -31,10 +31,14 @@
             <li class="nav-item">
             <a id="addPetLink" runat="server" class="nav-link" href="AddPet.aspx" style="line-height:115px;">Add Pets</a>
           </li>
+            <li>
+                <li class="nav-item">
+                    <asp:Button runat="server" id="btnLogOut" class="btn btn-dark" Text="Log Out" OnClick="btnLogOut_Click" />
+
+            </li>
         </ul>
     </div>
 
-    <form id="form1" runat="server">
         <div>
             <!-- ContentPlaceHolder1 -->
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

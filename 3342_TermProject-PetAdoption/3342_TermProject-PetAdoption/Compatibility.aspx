@@ -102,5 +102,9 @@
                   </div>
              </div>
                 <footer class="card-footer"><center>
+                    <small>You will be redirected to the pet who is most compatible with your search!</small><br />
+                    <br />
                 <asp:Button ID="btnFindMatch" class="btn btn-dark" runat="server" type="submit" Text="Find Match" OnClick="btnFindMatch_Click"></asp:Button>
+</div>
+
 </asp:Content>

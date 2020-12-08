@@ -21,7 +21,13 @@ namespace _3342_TermProject_PetAdoption
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             userType = Session["UserType"].ToString();
+            if (userType == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+
             if (userType == "PetAdopter")
             {
                 var AddPets = Page.Master.FindControl("addPetLink");

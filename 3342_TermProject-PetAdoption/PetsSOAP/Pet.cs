@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetAdoptionLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,6 +37,7 @@ namespace PetsSOAP
             addToDatabase();
 
         }
+
 
         protected void addToDatabase()
         {
