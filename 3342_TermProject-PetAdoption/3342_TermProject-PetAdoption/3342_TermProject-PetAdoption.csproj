@@ -69,6 +69,7 @@
     <Content Include="AddPet.aspx" />
     <Content Include="CSS\Home_Stylesheet.css" />
     <Content Include="CSS\Login_Stylesheet.css" />
+    <Content Include="CSS\PetPage_Stylesheet.css" />
     <Content Include="CSS\Profile_Stylesheet.css" />
     <Content Include="CSS\AddPet_Stylesheet.css" />
     <Content Include="CSS\Register_Stylesheet.css" />

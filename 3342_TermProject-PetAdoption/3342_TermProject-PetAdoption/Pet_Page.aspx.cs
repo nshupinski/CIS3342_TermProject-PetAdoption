@@ -40,6 +40,9 @@ namespace _3342_TermProject_PetAdoption
             txtGWPets.Text = selectedPet.goodWithPets.ToString();
             txtLocation.Text = selectedPet.location.ToString();
             txtAge.Text = selectedPet.ageRange.ToString();
+
+
+            petPhoto.Src = "ImageGrab.aspx?ID=" + pet.petID;
         }
 
         protected void btnLove_Clicked(object sender, EventArgs e)
@@ -54,7 +57,17 @@ namespace _3342_TermProject_PetAdoption
 
         protected void btnAdopt_Clicked(object sender, EventArgs e)
         {
+            string userID = Session["Username"].ToString();
 
+            PetsSOAP.Pets proxy = new PetsSOAP.Pets();
+            proxy.AddRequest(userID, pet.petID);
+
+            modal.Style["visibility"] = "visible";
+        }
+
+        protected void btnAdoptClose_Clicked(object sender, EventArgs e)
+        {
+            modal.Style["visibility"] = "hidden";
         }
     }
 }

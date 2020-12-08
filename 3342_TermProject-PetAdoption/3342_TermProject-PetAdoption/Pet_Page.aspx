@@ -14,6 +14,8 @@
 
         </div>
         <div id="content">
+            <img ID="petPhoto" runat="server" src="" />
+
             <asp:TextBox runat="server" id="txtName" type="text" Text=""></asp:TextBox><br /><br />
 
             <asp:Label ID="lblAnimal" runat="server" Text="Species: "></asp:Label>
@@ -37,6 +39,19 @@
             <asp:Label ID="lblAge" runat="server" Text="Age Range: "></asp:Label>
             <asp:TextBox runat="server" id="txtAge" type="text" Text=""></asp:TextBox><br />
         </div>
+    </div>
+
+    <div id="modal" class="modal" tabindex="-1" role="dialog" style="display: block; visibility: hidden;" runat="server">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Your adoption request has been sent!</p>
+          </div>
+          <div class="modal-footer">
+            <asp:Button type="button" class="btn btn-secondary" onclick="btnAdoptClose_Clicked" runat="server" Text="Close"></asp:Button>
+          </div>
+        </div>
+      </div>
     </div>
 
 </asp:Content>

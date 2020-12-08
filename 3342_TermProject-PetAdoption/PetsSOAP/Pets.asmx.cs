@@ -72,5 +72,25 @@ namespace PetsSOAP
 
             return petID;
         }
+
+
+        [WebMethod]
+        public int AddRequest(string userID, int petID)
+        {
+            DBConnect objDB = new DBConnect();
+
+            SqlCommand addPetCmd = new SqlCommand();
+
+            addPetCmd.CommandType = CommandType.StoredProcedure;
+            addPetCmd.CommandText = "TP_AddRequest";
+
+            addPetCmd.Parameters.AddWithValue("@username", userID);
+            addPetCmd.Parameters.AddWithValue("@petID", petID);
+            addPetCmd.Parameters.AddWithValue("@requestDate", DateTime.Now);
+
+            DataSet data = objDB.GetDataSetUsingCmdObj(addPetCmd);
+
+            return petID;
+        }
     }
 }
