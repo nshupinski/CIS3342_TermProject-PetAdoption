@@ -17,7 +17,7 @@
                     <asp:Label ID="lblErrors" runat="server" Text=""></asp:Label>
                   <p><asp:TextBox runat="server" id="username_input" class="form-control" type="text" Placeholder="Username"></asp:TextBox></p>
                   <p>
-                      <asp:Button ID="btnForgotPassword" class="btn btn-light col-md-4" style="float: right" runat="server" type="submit" Text="Forgot Password?" OnClick="btnForgotPassword_Click"></asp:Button>
+                      <asp:Button ID="btnForgotPassword" class="btn btn-light col-md-4" style="float: right" runat="server" type="submit" Text="Forgot Password" OnClick="btnForgotPassword_Click"></asp:Button>
                       <asp:TextBox runat="server" id="password_input" class="form-control col-md-7" type="text" Placeholder="Password"></asp:TextBox>
                   </p>
                   
