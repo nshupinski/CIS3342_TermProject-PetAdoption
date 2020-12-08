@@ -131,6 +131,8 @@ namespace _3342_TermProject_PetAdoption
                     PetsSOAP.Accounts approveProxy = new PetsSOAP.Accounts();
                     approveProxy.updateStatus(username, petID, status);
                     loadShelterGV();
+                    PetsSOAP.Pets deleteProxy = new PetsSOAP.Pets();
+                    deleteProxy.deletePet(username, petID);
 
                     break;
 
