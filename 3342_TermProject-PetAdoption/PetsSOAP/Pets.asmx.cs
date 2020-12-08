@@ -57,6 +57,24 @@ namespace PetsSOAP
         }
 
         [WebMethod]
+        public int likePet(string userID, int petID)
+        {
+            DBConnect objDB = new DBConnect();
+
+            SqlCommand addPetCmd = new SqlCommand();
+
+            addPetCmd.CommandType = CommandType.StoredProcedure;
+            addPetCmd.CommandText = "TP_LikePet";
+
+            addPetCmd.Parameters.AddWithValue("@userID", userID);
+            addPetCmd.Parameters.AddWithValue("@petID", petID);
+
+            DataSet data = objDB.GetDataSetUsingCmdObj(addPetCmd);
+
+            return petID;
+        }
+
+        [WebMethod]
         public int getMatch(Match search)
         {
 
