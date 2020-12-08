@@ -28,7 +28,7 @@ namespace _3342_TermProject_PetAdoption
             response.Close();
 
             JavaScriptSerializer js = new JavaScriptSerializer();
-            PetsSOAP.Pet selectedPet = js.Deserialize<PetsSOAP.Pet>(data);
+            Pet selectedPet = js.Deserialize<Pet>(data);
 
             txtAnimal.Text = selectedPet.animal.ToString();
             txtBreed.Text = selectedPet.breed.ToString();

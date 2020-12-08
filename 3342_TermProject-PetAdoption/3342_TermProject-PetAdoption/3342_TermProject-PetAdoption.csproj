@@ -87,6 +87,7 @@
     </None>
     <None Include="Web References\Accounts\Accounts.disco" />
     <Content Include="MyPets.aspx" />
+    <Content Include="Pet_Page.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Verification.aspx" />
     <Content Include="Web.config" />
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="MyPets.aspx.designer.cs">
       <DependentUpon>MyPets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pet_Page.aspx.cs">
+      <DependentUpon>Pet_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pet_Page.aspx.designer.cs">
+      <DependentUpon>Pet_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

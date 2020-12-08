@@ -9,12 +9,11 @@
             <br />
             <div class="card h-100">
               <header class="card-header">
-                  Add a Pet
+                  Compatibility Test
               </header>
               <div class="card-body">
                     <asp:Label ID="lblErrors" runat="server" Text=""></asp:Label>
                   <h3>I want a(n)...</h3>
-                  <label for="animal_input"><small><b>Animal</b></small></label>
                       <asp:DropDownList id="ddlAnimal" class="form-control col-md-11 input" runat="server">
                               <asp:ListItem value="" selected="selected">Select an Animal Type</asp:ListItem>
                               <asp:ListItem value="Cat">Cat</asp:ListItem>
@@ -24,7 +23,6 @@
                               <asp:ListItem value="Aquatic">Aquatic Animals</asp:ListItem>
                       </asp:DropDownList><br />
                   <h3>Whose age is...</h3>
-                  <label for="animal_input"><small><b>Age Range</b></small></label>
                       <asp:DropDownList id="age_input" class="form-control col-md-11 input" runat="server">
                               <asp:ListItem value="" selected="selected">Select the Age Range</asp:ListItem>
                               <asp:ListItem value="Baby">Baby</asp:ListItem>
@@ -34,7 +32,6 @@
                       </asp:DropDownList><br />
                   
                   <h3>In this state...</h3>
-                  <label for="state_input"><small><b>State</b></small></label>
                       <asp:DropDownList id="state_input" class="form-control col-md-11 input" runat="server">
                               <asp:ListItem value="" selected="selected">Select a State</asp:ListItem>
                               <asp:ListItem value="AL">Alabama</asp:ListItem>
