@@ -10,11 +10,8 @@
     </div>
 
     <div id="container">
-        <div id="picture">
-
-        </div>
         <div id="content">
-            <img ID="petPhoto" runat="server" src="" />
+            <img ID="petPhoto" runat="server" src="" /><br />
 
             <asp:TextBox runat="server" id="txtName" type="text" Text=""></asp:TextBox><br /><br />
 

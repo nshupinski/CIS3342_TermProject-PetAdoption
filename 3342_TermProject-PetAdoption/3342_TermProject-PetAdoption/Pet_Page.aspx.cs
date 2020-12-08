@@ -17,6 +17,19 @@ namespace _3342_TermProject_PetAdoption
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Disable pet info if user is adopter
+            if(Session["UserType"].ToString() == "PetAdopter")
+            {
+                txtAnimal.Enabled = false;
+                txtBreed.Enabled = false;
+                txtGWKids.Enabled = false;
+                txtGWPets.Enabled = false;
+                txtLocation.Enabled = false;
+                txtAge.Enabled = false;
+            }
+
+            string userType = Session["UserType"].ToString();
+
             if (userType == null)
             {
                 Response.Redirect("Login.aspx");
@@ -37,7 +50,7 @@ namespace _3342_TermProject_PetAdoption
             Pet selectedPet = js.Deserialize<Pet>(data);
 
             pet = selectedPet;
-
+            txtName.Text = selectedPet.name.ToString();
             txtAnimal.Text = selectedPet.animal.ToString();
             txtBreed.Text = selectedPet.breed.ToString();
             txtGWKids.Text = selectedPet.goodWithKids.ToString();
