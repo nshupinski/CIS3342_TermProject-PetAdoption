@@ -33,6 +33,10 @@ namespace _3342_TermProject_PetAdoption
             if (userType == null)
             {
                 Response.Redirect("Login.aspx");
+            }else if(userType == "PetAdopter")
+            {
+                var AddPets = Page.Master.FindControl("addPetLink");
+                AddPets.Visible = false;
             }
             int petID = int.Parse(Session["selectedPet"].ToString());
 
