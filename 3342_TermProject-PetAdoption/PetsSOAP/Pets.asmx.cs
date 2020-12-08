@@ -74,6 +74,7 @@ namespace PetsSOAP
             return petID;
 		}
 		
+		[WebMethod]
         public int getMatch(Match search)
         {
 
