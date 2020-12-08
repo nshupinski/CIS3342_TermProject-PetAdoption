@@ -13,10 +13,13 @@ namespace _3342_TermProject_PetAdoption
     public partial class AddPet : System.Web.UI.Page
     {
         string username;
+        string userType;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            userType = Session["UserType"].ToString();
             username = Session["Username"].ToString();
+
         }
 
         protected void btnSubmit_addPet_Click(object sender, EventArgs e)

@@ -21,7 +21,15 @@ namespace _3342_TermProject_PetAdoption
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!(IsPostBack))
+            string userType = Session["UserType"].ToString();
+
+            if(userType == "PetAdopter")
+            {
+                var AddPets = Page.Master.FindControl("addPetLink");
+                AddPets.Visible = false;
+            }
+
+            if (!(IsPostBack))
             {
                 // Get Pet objects
                 WebRequest request = WebRequest.Create("https://localhost:44361/api/Pet/GetAllPets/");

@@ -43,30 +43,66 @@ namespace PetsREST.Controllers
             return pets;
         }
 
-        [HttpGet("GetPetPictures")]
-        public List<PetPicture> GetPetPictures()
+        [HttpGet("GetLikedPets/{username}")]
+        public List<Pet> GetLikedPets(string username)
         {
             DBConnect objDB = new DBConnect();
             SqlCommand getPetsCmd = new SqlCommand();
 
             getPetsCmd.CommandType = CommandType.StoredProcedure;
-            getPetsCmd.CommandText = "TP_GetPetPictures";
+            getPetsCmd.CommandText = "TP_GetUserLikedPets";
+            getPetsCmd.Parameters.AddWithValue("@username", username);
 
             DataSet ds = objDB.GetDataSetUsingCmdObj(getPetsCmd);
 
-            List<PetPicture> pictures = new List<PetPicture>();
+            List<Pet> pets = new List<Pet>();
             foreach (DataRow row in ds.Tables[0].Rows)
             {
-                PetPicture newPetPicture = new PetPicture();
-                newPetPicture.petID = int.Parse(row["petID"].ToString());
-                newPetPicture.ImageData = row["ImageData"].ToString();
-                newPetPicture.ImageType = row["ImageType"].ToString();
-                newPetPicture.ImageLength = int.Parse(row["ImageLength"].ToString());
-                newPetPicture.ImageTitle = row["ImageTitle"].ToString();
+                Pet newPet = new Pet();
+                newPet.name = row["name"].ToString();
+                newPet.petID = int.Parse(row["petID"].ToString());
+                newPet.shelterUser = row["shelterID"].ToString();
+                newPet.animal = row["animal"].ToString();
+                newPet.breed = row["breed"].ToString();
+                newPet.goodWithKids = int.Parse(row["goodWithKids"].ToString());
+                newPet.goodWithPets = int.Parse(row["goodWithPets"].ToString());
+                newPet.location = row["location"].ToString();
+                newPet.ageRange = row["ageRange"].ToString();
 
-                pictures.Add(newPetPicture);
+                pets.Add(newPet);
             }
-            return pictures;
+            return pets;
+        }
+
+        [HttpGet("GetShelterPets/{username}")]
+        public List<Pet> GetShelterPets(string username)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand getPetsCmd = new SqlCommand();
+
+            getPetsCmd.CommandType = CommandType.StoredProcedure;
+            getPetsCmd.CommandText = "TP_GetAllShelterPets";
+            getPetsCmd.Parameters.AddWithValue("@shelterID", username);
+
+            DataSet ds = objDB.GetDataSetUsingCmdObj(getPetsCmd);
+
+            List<Pet> pets = new List<Pet>();
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                Pet newPet = new Pet();
+                newPet.name = row["name"].ToString();
+                newPet.petID = int.Parse(row["petID"].ToString());
+                newPet.shelterUser = row["shelterID"].ToString();
+                newPet.animal = row["animal"].ToString();
+                newPet.breed = row["breed"].ToString();
+                newPet.goodWithKids = int.Parse(row["goodWithKids"].ToString());
+                newPet.goodWithPets = int.Parse(row["goodWithPets"].ToString());
+                newPet.location = row["location"].ToString();
+                newPet.ageRange = row["ageRange"].ToString();
+
+                pets.Add(newPet);
+            }
+            return pets;
         }
 
     }
