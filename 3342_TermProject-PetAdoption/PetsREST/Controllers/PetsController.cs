@@ -25,7 +25,7 @@ namespace PetsREST.Controllers
             DataSet ds = objDB.GetDataSetUsingCmdObj(getPetsCmd);
 
             List<Pet> pets = new List<Pet>();
-            foreach(DataRow row in ds.Tables[0].Rows)
+            foreach (DataRow row in ds.Tables[0].Rows)
             {
                 Pet newPet = new Pet();
                 newPet.name = row["name"].ToString();
@@ -105,5 +105,20 @@ namespace PetsREST.Controllers
             return pets;
         }
 
-    }
+        [HttpGet("GetPetByID/{petID}")]
+        public DataSet GetPetByID(int petID)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand getPetsCmd = new SqlCommand();
+
+            getPetsCmd.CommandType = CommandType.StoredProcedure;
+            getPetsCmd.CommandText = "TP_GetPetByID";
+
+            getPetsCmd.Parameters.AddWithValue("@petID", petID);
+
+            DataSet ds = objDB.GetDataSetUsingCmdObj(getPetsCmd);
+
+            return ds;
+        }
+    }       
 }
