@@ -75,6 +75,25 @@ namespace PetsSOAP
         }
 
         [WebMethod]
+        public int AddRequest(string userID, int petID)
+        {
+            DBConnect objDB = new DBConnect();
+
+            SqlCommand addPetCmd = new SqlCommand();
+
+            addPetCmd.CommandType = CommandType.StoredProcedure;
+            addPetCmd.CommandText = "TP_AddRequest";
+
+            addPetCmd.Parameters.AddWithValue("@username", userID);
+            addPetCmd.Parameters.AddWithValue("@petID", petID);
+            addPetCmd.Parameters.AddWithValue("@requestDate", DateTime.Now);
+
+            DataSet data = objDB.GetDataSetUsingCmdObj(addPetCmd);
+
+            return petID;
+        }
+
+        [WebMethod]
         public int getMatch(Match search)
         {
 
@@ -134,6 +153,22 @@ namespace PetsSOAP
             int petMatch = compatNumbers.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
 
             return petMatch;
+        }
+
+        [WebMethod]
+        public void deletePet(string username, int petID)
+        {
+            DBConnect objDB = new DBConnect();
+
+            SqlCommand deletePetCmd = new SqlCommand();
+
+            deletePetCmd.CommandType = CommandType.StoredProcedure;
+            deletePetCmd.CommandText = "TP_LikePet";
+
+            deletePetCmd.Parameters.AddWithValue("@shelterID", username);
+            deletePetCmd.Parameters.AddWithValue("@petID", petID);
+
+            int result = objDB.DoUpdateUsingCmdObj(deletePetCmd);
         }
     }
 }

@@ -81,3 +81,14 @@ tr {
 .container{
     width: 80%;
 }
+
+.btn {
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 2px;
+}
+
+#btnLogOut {
+    font-family: 'Fredoka One', cursive;
+    margin-top: 46px;
+    margin-left: 7px;
+}

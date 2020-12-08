@@ -17,9 +17,28 @@ namespace _3342_TermProject_PetAdoption
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Disable pet info if user is adopter
+            if(Session["UserType"].ToString() == "PetAdopter")
+            {
+                txtName.Enabled = false;
+                txtAnimal.Enabled = false;
+                txtBreed.Enabled = false;
+                txtShelter.Enabled = false;
+                txtGWKids.Enabled = false;
+                txtGWPets.Enabled = false;
+                txtLocation.Enabled = false;
+                txtAge.Enabled = false;
+            }
+
+            string userType = Session["UserType"].ToString();
+
             if (userType == null)
             {
                 Response.Redirect("Login.aspx");
+            }else if(userType == "PetAdopter")
+            {
+                var AddPets = Page.Master.FindControl("addPetLink");
+                AddPets.Visible = false;
             }
             int petID = int.Parse(Session["selectedPet"].ToString());
 
@@ -37,13 +56,25 @@ namespace _3342_TermProject_PetAdoption
             Pet selectedPet = js.Deserialize<Pet>(data);
 
             pet = selectedPet;
-
+            txtName.Text = selectedPet.name.ToString();
             txtAnimal.Text = selectedPet.animal.ToString();
             txtBreed.Text = selectedPet.breed.ToString();
+            txtShelter.Text = selectedPet.shelterUser.ToString();
             txtGWKids.Text = selectedPet.goodWithKids.ToString();
             txtGWPets.Text = selectedPet.goodWithPets.ToString();
             txtLocation.Text = selectedPet.location.ToString();
             txtAge.Text = selectedPet.ageRange.ToString();
+
+            if(txtGWKids.Text == "0")
+            {
+                txtGWKids.Text = "No";
+            }
+            if (txtGWPets.Text == "0")
+            {
+                txtGWPets.Text = "No";
+            }
+
+            petPhoto.Src = "ImageGrab.aspx?ID=" + pet.petID;
         }
 
         protected void btnLove_Clicked(object sender, EventArgs e)
@@ -58,7 +89,17 @@ namespace _3342_TermProject_PetAdoption
 
         protected void btnAdopt_Clicked(object sender, EventArgs e)
         {
+            string userID = Session["Username"].ToString();
 
+            PetsSOAP.Pets proxy = new PetsSOAP.Pets();
+            proxy.AddRequest(userID, pet.petID);
+
+            modal.Style["visibility"] = "visible";
+        }
+
+        protected void btnAdoptClose_Clicked(object sender, EventArgs e)
+        {
+            modal.Style["visibility"] = "hidden";
         }
     }
 }
