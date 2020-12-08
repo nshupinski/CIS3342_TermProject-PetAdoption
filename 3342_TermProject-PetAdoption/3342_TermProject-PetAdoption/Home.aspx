@@ -14,7 +14,7 @@
     </div>
     <br />
     <div class="container">
-    <div class="row">
+    <div class="card-deck">
     <asp:Repeater ID="rptPet" runat="server" OnItemCommand="rptPet_ItemCommand" >
         <ItemTemplate>
             <div class="col-sm-12 col-lg-3">

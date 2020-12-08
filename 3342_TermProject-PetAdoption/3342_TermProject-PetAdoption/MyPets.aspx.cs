@@ -24,6 +24,11 @@ namespace _3342_TermProject_PetAdoption
             userType = Session["UserType"].ToString();
             username = Session["Username"].ToString();
 
+            if (userType == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+
             if (userType == "PetAdopter")
             {
                 loadLikedPets();

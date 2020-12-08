@@ -22,6 +22,8 @@ namespace _3342_TermProject_PetAdoption
             var pets = Page.Master.FindControl("petsLink");
             pets.Visible = false;
             username = Session["Username"].ToString();
+            var LogOut = Page.Master.FindControl("btnLogOut");
+            LogOut.Visible = false;
         }
 
         protected void btnVerify_Click(object sender, EventArgs e)

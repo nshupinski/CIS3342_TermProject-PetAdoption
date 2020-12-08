@@ -21,6 +21,8 @@ namespace _3342_TermProject_PetAdoption
             pets.Visible = false;
             var AddPets = Page.Master.FindControl("addPetLink");
             AddPets.Visible = false;
+            var LogOut = Page.Master.FindControl("btnLogOut");
+            LogOut.Visible = false;
 
             if (!IsPostBack)
             {

@@ -13,5 +13,13 @@ namespace _3342_TermProject_PetAdoption
         {
 
         }
+
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+            Session["UserType"] = null;
+            Session["Username"] = null;
+        }
     }
 }
