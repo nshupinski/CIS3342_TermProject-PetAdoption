@@ -105,7 +105,7 @@ namespace _3342_TermProject_PetAdoption
             String pet = myLabel.Text;
             int petID = Int32.Parse(pet);
             Session.Add("selectedPet", petID);
-            Response.Redirect("PetPage.aspx");
+            Response.Redirect("Pet_Page.aspx");
         }
 
         public class ListtoDataTableConverter
