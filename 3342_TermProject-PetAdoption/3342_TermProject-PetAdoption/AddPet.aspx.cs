@@ -77,6 +77,8 @@ namespace _3342_TermProject_PetAdoption
             PetsSOAP.Pets proxy = new PetsSOAP.Pets();
             int petID = proxy.addPet(newPet);
             uploadPhotoToDatabase(petID);
+            Session.Add("selectedPet", petID);
+            Response.Redirect("Pet_Page.aspx");
         }
 
         public void uploadPhotoToDatabase(int petID)
