@@ -20,8 +20,10 @@ namespace _3342_TermProject_PetAdoption
             // Disable pet info if user is adopter
             if(Session["UserType"].ToString() == "PetAdopter")
             {
+                txtName.Enabled = false;
                 txtAnimal.Enabled = false;
                 txtBreed.Enabled = false;
+                txtShelter.Enabled = false;
                 txtGWKids.Enabled = false;
                 txtGWPets.Enabled = false;
                 txtLocation.Enabled = false;
@@ -57,11 +59,20 @@ namespace _3342_TermProject_PetAdoption
             txtName.Text = selectedPet.name.ToString();
             txtAnimal.Text = selectedPet.animal.ToString();
             txtBreed.Text = selectedPet.breed.ToString();
+            txtShelter.Text = selectedPet.shelterUser.ToString();
             txtGWKids.Text = selectedPet.goodWithKids.ToString();
             txtGWPets.Text = selectedPet.goodWithPets.ToString();
             txtLocation.Text = selectedPet.location.ToString();
             txtAge.Text = selectedPet.ageRange.ToString();
 
+            if(txtGWKids.Text == "0")
+            {
+                txtGWKids.Text = "No";
+            }
+            if (txtGWPets.Text == "0")
+            {
+                txtGWPets.Text = "No";
+            }
 
             petPhoto.Src = "ImageGrab.aspx?ID=" + pet.petID;
         }
