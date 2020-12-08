@@ -70,7 +70,7 @@ namespace PetsREST.Controllers
         }
 
         [HttpGet("GetPetByID/{petID}")]
-        public DataSet GetPetByID(int petID)
+        public Pet GetPetByID(int petID)
         {
             DBConnect objDB = new DBConnect();
             SqlCommand getPetsCmd = new SqlCommand();
@@ -82,7 +82,18 @@ namespace PetsREST.Controllers
 
             DataSet ds = objDB.GetDataSetUsingCmdObj(getPetsCmd);
 
-            return ds;
+            Pet newPet = new Pet();
+            newPet.name = ds.Tables[0].Rows[0]["name"].ToString();
+            newPet.petID = int.Parse(ds.Tables[0].Rows[0]["petID"].ToString());
+            newPet.shelterUser = ds.Tables[0].Rows[0]["shelterID"].ToString();
+            newPet.animal = ds.Tables[0].Rows[0]["animal"].ToString();
+            newPet.breed = ds.Tables[0].Rows[0]["breed"].ToString();
+            newPet.goodWithKids = int.Parse(ds.Tables[0].Rows[0]["goodWithKids"].ToString());
+            newPet.goodWithPets = int.Parse(ds.Tables[0].Rows[0]["goodWithPets"].ToString());
+            newPet.location = ds.Tables[0].Rows[0]["location"].ToString();
+            newPet.ageRange = ds.Tables[0].Rows[0]["ageRange"].ToString();
+
+            return newPet;
         }
     }       
 }

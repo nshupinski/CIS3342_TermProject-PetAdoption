@@ -13,6 +13,8 @@ namespace _3342_TermProject_PetAdoption
 {
     public partial class Pet_Page : System.Web.UI.Page
     {
+        Pet pet = new Pet();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             int petID = int.Parse(Session["selectedPet"].ToString());
@@ -28,7 +30,9 @@ namespace _3342_TermProject_PetAdoption
             response.Close();
 
             JavaScriptSerializer js = new JavaScriptSerializer();
-            PetsSOAP.Pet selectedPet = js.Deserialize<PetsSOAP.Pet>(data);
+            Pet selectedPet = js.Deserialize<Pet>(data);
+
+            pet = selectedPet;
 
             txtAnimal.Text = selectedPet.animal.ToString();
             txtBreed.Text = selectedPet.breed.ToString();
@@ -40,18 +44,12 @@ namespace _3342_TermProject_PetAdoption
 
         protected void btnLove_Clicked(object sender, EventArgs e)
         {
-            PetsSOAP.Pet newPet = new PetsSOAP.Pet();
-            newPet.name = txtName.Text;
-            newPet.shelterUser = txtShelter.Text;
-            newPet.animal = txtAnimal.Text;
-            newPet.breed = txtBreed.Text;
-            newPet.goodWithKids = int.Parse(txtGWKids.Text);
-            newPet.goodWithPets = int.Parse(txtGWPets.Text);
-            newPet.location = txtLocation.Text;              
-            newPet.ageRange = txtAge.Text;
+            string userID = Session["Username"].ToString();
             
             PetsSOAP.Pets proxy = new PetsSOAP.Pets();
-            int petID = proxy.addPet(newPet);
+            proxy.likePet(userID, pet.petID);
+
+            btnLove.Style["background-color"] = "red";
         }
 
         protected void btnAdopt_Clicked(object sender, EventArgs e)
