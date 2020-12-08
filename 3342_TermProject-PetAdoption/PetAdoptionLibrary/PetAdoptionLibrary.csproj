@@ -44,6 +44,7 @@
     <Compile Include="Account.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Email.cs" />
+    <Compile Include="Match.cs" />
     <Compile Include="Pet.cs" />
     <Compile Include="PetPicture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
