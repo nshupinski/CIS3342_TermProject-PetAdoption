@@ -82,6 +82,11 @@ tr {
     width: 80%;
 }
 
+.btn {
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 2px;
+}
+
 #btnLogOut {
     font-family: 'Fredoka One', cursive;
     margin-top: 46px;
