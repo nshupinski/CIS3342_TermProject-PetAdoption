@@ -1,19 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="_3342_TermProject_PetAdoption.Home" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MyPets.aspx.cs" Inherits="_3342_TermProject_PetAdoption.MyPets" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="CSS/Home_Stylesheet.css" rel="stylesheet" />
-
 </asp:Content>
-
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div id="compatSection">
-        <asp:Button ID="btnCompatTest" class="btn btn-light" runat="server" Text="Compatibility Test" OnClick="btnCompatTest_Clicked" />
-    </div>
     <br />
     <div class="container">
+        <h2 runat="server">Welcome to My Pets!</h2>
+        <p runat="server" id="description"></p>
     <div class="row">
     <asp:Repeater ID="rptPet" runat="server" OnItemCommand="rptPet_ItemCommand" >
         <ItemTemplate>
@@ -66,18 +61,5 @@
         </div>
         
         </div>
-    <div class="container">
-      <div class="row">
-        <div id="col1" class="col-sm" runat="server">
-          
-        </div>
-        <div id="col2" class="col-sm" runat="server">
-            
-        </div>
-        <div id="col3" class="col-sm" runat="server">
-
-        </div>
-      </div>
-    </div>
 
 </asp:Content>

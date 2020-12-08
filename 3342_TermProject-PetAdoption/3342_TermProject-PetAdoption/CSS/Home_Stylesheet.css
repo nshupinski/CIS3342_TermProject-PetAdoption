@@ -19,10 +19,21 @@
 }
 
 img{
-    height:125px;
-    width: auto;
+    width:auto;
+    height: 125px;
 }
 
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+    overflow: hidden;
+}
+
+.card{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 #compatSection {
     width: 100%;

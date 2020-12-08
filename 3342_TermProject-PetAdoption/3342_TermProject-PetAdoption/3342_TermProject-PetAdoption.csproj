@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddPet.aspx" />
+    <Content Include="Compatibility.aspx" />
     <Content Include="CSS\Home_Stylesheet.css" />
     <Content Include="CSS\Login_Stylesheet.css" />
     <Content Include="CSS\PetPage_Stylesheet.css" />
@@ -86,6 +87,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Web References\Accounts\Accounts.disco" />
+    <Content Include="MyPets.aspx" />
     <Content Include="Pet_Page.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Verification.aspx" />
@@ -99,6 +101,13 @@
     </Compile>
     <Compile Include="AddPet.aspx.designer.cs">
       <DependentUpon>AddPet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Compatibility.aspx.cs">
+      <DependentUpon>Compatibility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compatibility.aspx.designer.cs">
+      <DependentUpon>Compatibility.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForgetPassword.aspx.cs">
       <DependentUpon>ForgetPassword.aspx</DependentUpon>
@@ -127,6 +136,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyPets.aspx.cs">
+      <DependentUpon>MyPets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyPets.aspx.designer.cs">
+      <DependentUpon>MyPets.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pet_Page.aspx.cs">
       <DependentUpon>Pet_Page.aspx</DependentUpon>

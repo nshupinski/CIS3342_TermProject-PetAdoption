@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetAdoptionLibrary;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -73,24 +74,66 @@ namespace PetsSOAP
             return petID;
         }
 
-
         [WebMethod]
-        public int AddRequest(string userID, int petID)
+        public int getMatch(Match search)
         {
+
             DBConnect objDB = new DBConnect();
+            SqlCommand getPetsCmd = new SqlCommand();
 
-            SqlCommand addPetCmd = new SqlCommand();
+            getPetsCmd.CommandType = CommandType.StoredProcedure;
+            getPetsCmd.CommandText = "TP_GetAllPets";
 
-            addPetCmd.CommandType = CommandType.StoredProcedure;
-            addPetCmd.CommandText = "TP_AddRequest";
+            DataSet ds = objDB.GetDataSetUsingCmdObj(getPetsCmd);
+            Dictionary<int, double> compatNumbers = new Dictionary<int, double>();
 
-            addPetCmd.Parameters.AddWithValue("@username", userID);
-            addPetCmd.Parameters.AddWithValue("@petID", petID);
-            addPetCmd.Parameters.AddWithValue("@requestDate", DateTime.Now);
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                int compatNum = 0;
+                Pet newPet = new Pet();
+                newPet.name = row["name"].ToString();
+                newPet.petID = int.Parse(row["petID"].ToString());
+                newPet.shelterUser = row["shelterID"].ToString();
+                newPet.animal = row["animal"].ToString();
+                newPet.breed = row["breed"].ToString();
+                newPet.goodWithKids = int.Parse(row["goodWithKids"].ToString());
+                newPet.goodWithPets = int.Parse(row["goodWithPets"].ToString());
+                newPet.location = row["location"].ToString();
+                newPet.ageRange = row["ageRange"].ToString();
+                string state = newPet.location.Substring(newPet.location.Length - 2);
 
-            DataSet data = objDB.GetDataSetUsingCmdObj(addPetCmd);
+                if (search.animal == newPet.animal)
+                {
+                    compatNum += 20;
+                }
 
-            return petID;
+                if(search.ageRange == newPet.ageRange)
+                {
+                    compatNum += 20;
+                }
+
+                if (search.goodWithKids == newPet.goodWithKids)
+                {
+                    compatNum += 20;
+                }
+
+
+                if (search.goodWithPets == newPet.goodWithPets)
+                {
+                    compatNum += 20;
+                }
+
+                if (search.location == state)
+                {
+                    compatNum += 20;
+                }
+
+                compatNumbers.Add(newPet.petID, compatNum);
+            }
+
+            int petMatch = compatNumbers.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+
+            return petMatch;
         }
     }
 }
