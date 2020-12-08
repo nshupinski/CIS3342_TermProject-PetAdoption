@@ -5,8 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div id="buttons">
-        <asp:Button ID="btnLove" Text="Love" runat="server" OnClick="btnLove_Clicked"/>
-        <asp:Button ID="btnAdopt" Text="Request Adoption" runat="server" style="margin-left: 2em;" OnClick="btnAdopt_Clicked"/>
+        <asp:Button ID="btnLove" class="btn btn-dark" Text="Love" runat="server" OnClick="btnLove_Clicked"/>
+        <asp:Button ID="btnAdopt" class="btn btn-dark" Text="Request Adoption" runat="server" style="margin-left: 2em;" OnClick="btnAdopt_Clicked"/>
     </div>
 
     <div id="container">
@@ -21,7 +21,7 @@
             <asp:Label ID="lblBreed" runat="server" Text="Breed: "></asp:Label>
             <asp:TextBox runat="server" id="txtBreed" type="text" Text=""></asp:TextBox><br />
 
-            <asp:Label ID="lblShelter" runat="server" Text="Breed: "></asp:Label>
+            <asp:Label ID="lblShelter" runat="server" Text="Shelter: "></asp:Label>
             <asp:TextBox runat="server" id="txtShelter" type="text" Text=""></asp:TextBox><br />
 
             <asp:Label ID="lblGWKids" runat="server" Text="Good With Kids: "></asp:Label>
