@@ -135,5 +135,21 @@ namespace PetsSOAP
 
             return petMatch;
         }
+
+        [WebMethod]
+        public void deletePet(string username, int petID)
+        {
+            DBConnect objDB = new DBConnect();
+
+            SqlCommand deletePetCmd = new SqlCommand();
+
+            deletePetCmd.CommandType = CommandType.StoredProcedure;
+            deletePetCmd.CommandText = "TP_LikePet";
+
+            deletePetCmd.Parameters.AddWithValue("@shelterID", username);
+            deletePetCmd.Parameters.AddWithValue("@petID", petID);
+
+            int result = objDB.DoUpdateUsingCmdObj(deletePetCmd);
+        }
     }
 }
