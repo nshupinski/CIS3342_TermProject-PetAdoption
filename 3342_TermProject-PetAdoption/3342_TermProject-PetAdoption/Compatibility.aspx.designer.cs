@@ -11,61 +11,70 @@ namespace _3342_TermProject_PetAdoption
 {
 
 
-    public partial class Site1
+    public partial class Compatibility
     {
 
         /// <summary>
-        /// head control.
+        /// lblErrors control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label lblErrors;
 
         /// <summary>
-        /// profileLink control.
+        /// ddlAnimal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor profileLink;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAnimal;
 
         /// <summary>
-        /// petsLink control.
+        /// age_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor petsLink;
+        protected global::System.Web.UI.WebControls.DropDownList age_input;
 
         /// <summary>
-        /// addPetLink control.
+        /// state_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor addPetLink;
+        protected global::System.Web.UI.WebControls.DropDownList state_input;
 
         /// <summary>
-        /// form1 control.
+        /// checkGoodWithKids control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkGoodWithKids;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// checkGoodWithPets control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkGoodWithPets;
+
+        /// <summary>
+        /// btnFindMatch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFindMatch;
     }
 }
